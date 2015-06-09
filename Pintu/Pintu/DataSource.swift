@@ -101,7 +101,9 @@ class DataSource: NSObject {
     }
     
     
-    
+    func assetAtIndexPath(section: Int, row: Int) -> PHAsset{
+        return self.photosGroupedByDate[section][row]
+    }
     
     
     

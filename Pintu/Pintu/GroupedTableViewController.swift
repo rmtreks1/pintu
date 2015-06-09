@@ -181,15 +181,27 @@ class GroupedTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
+        if segue.identifier == "fullScreen"{
+            
+            let destinationVC = segue.destinationViewController as! MainPhotoVC
+            let cell = sender as! MomentsTableViewCell
+            let indexPath = self.tableView.indexPathForCell(cell)
+            let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row)
+            
+            destinationVC.asset = asset
+            
+        }
+        
+        println("preparing for segue")
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
     
     func monthDayYear(date: NSDate , formatter: NSDateFormatter) -> String{

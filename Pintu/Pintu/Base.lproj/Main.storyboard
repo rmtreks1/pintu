@@ -70,6 +70,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoImage" destination="GIb-vO-Fdg" id="ZfM-yz-V3c"/>
+                                    <segue destination="5Cs-zv-Dbb" kind="show" identifier="fullScreen" id="nIC-Iw-Jm5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,6 +84,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdf-ip-O6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="377"/>
+        </scene>
+        <!--Main PhotoVC-->
+        <scene sceneID="PUE-gL-UMy">
+            <objects>
+                <viewController id="5Cs-zv-Dbb" customClass="MainPhotoVC" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q8U-et-glP"/>
+                        <viewControllerLayoutGuide type="bottom" id="bZQ-6J-PoS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrQ-wY-b7s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-cC-0qk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fkg-cC-0qk" firstAttribute="top" secondItem="DrQ-wY-b7s" secondAttribute="top" id="1Xr-tb-zHd"/>
+                            <constraint firstAttribute="trailing" secondItem="fkg-cC-0qk" secondAttribute="trailing" id="CVN-is-unt"/>
+                            <constraint firstAttribute="bottom" secondItem="fkg-cC-0qk" secondAttribute="bottom" id="oYh-DD-tRF"/>
+                            <constraint firstItem="fkg-cC-0qk" firstAttribute="leading" secondItem="DrQ-wY-b7s" secondAttribute="leading" id="vfI-1e-C3f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullScreenMedia" destination="fkg-cC-0qk" id="zDo-ex-yuk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JuZ-JP-hcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2768" y="377"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XvY-20-UI3">
