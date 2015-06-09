@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Photos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
         
-        
-        
+        // asking for pemission
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.Authorized {
+            println("not authorized")
+            
+            PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) -> Void in
+                if status == PHAuthorizationStatus.Authorized {
+                    DataSource.sharedInstance.photosPermission = true
+                    
+                }
+            })
+            
+        }
         
         return true
     }

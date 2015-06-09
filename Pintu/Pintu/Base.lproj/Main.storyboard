@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OZx-HX-2Qa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KNl-0i-aEv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,28 +10,63 @@
         <scene sceneID="SNE-kx-sdy">
             <objects>
                 <tableViewController id="pFi-xh-ezB" customClass="GroupedTableViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vtm-4Q-a11">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="430" sectionHeaderHeight="22" sectionFooterHeight="22" id="vtm-4Q-a11">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="46F-sS-uwj" customClass="MomentsTableViewCell" customModule="Pintu" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="46F-sS-uwj" customClass="MomentsTableViewCell" customModule="Pintu" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46F-sS-uwj" id="e8h-pF-RzK">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-vO-Fdg">
-                                            <rect key="frame" x="170" y="13" width="93" height="93"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-vO-Fdg">
+                                            <rect key="frame" x="0.0" y="2" width="600" height="425"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="GIb-vO-Fdg" secondAttribute="height" multiplier="1:1" id="r8F-9C-bV4"/>
+                                                <constraint firstAttribute="width" secondItem="GIb-vO-Fdg" secondAttribute="height" multiplier="1:1" id="tJY-5l-cjA"/>
+                                                <constraint firstAttribute="width" secondItem="GIb-vO-Fdg" secondAttribute="height" multiplier="1:1" id="y5O-0a-5US"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="r8F-9C-bV4"/>
+                                                    <exclude reference="tJY-5l-cjA"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="GIb-vO-Fdg" secondAttribute="bottom" constant="5" id="3ia-xq-m23"/>
                                         <constraint firstItem="GIb-vO-Fdg" firstAttribute="top" secondItem="e8h-pF-RzK" secondAttribute="topMargin" constant="5" id="47o-1T-diz"/>
+                                        <constraint firstItem="GIb-vO-Fdg" firstAttribute="leading" secondItem="e8h-pF-RzK" secondAttribute="leadingMargin" id="78f-X4-irY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GIb-vO-Fdg" secondAttribute="trailing" id="CZD-gE-HUs"/>
+                                        <constraint firstItem="GIb-vO-Fdg" firstAttribute="leading" secondItem="e8h-pF-RzK" secondAttribute="leading" id="Fda-7d-laq"/>
+                                        <constraint firstAttribute="bottom" secondItem="GIb-vO-Fdg" secondAttribute="bottom" constant="2" id="Gc2-cM-TCg"/>
+                                        <constraint firstAttribute="centerX" secondItem="GIb-vO-Fdg" secondAttribute="centerX" constant="79.5" id="T6p-7x-ySw"/>
+                                        <constraint firstAttribute="trailing" secondItem="GIb-vO-Fdg" secondAttribute="trailing" id="Wg0-2v-8Ai"/>
+                                        <constraint firstAttribute="trailing" secondItem="GIb-vO-Fdg" secondAttribute="trailing" id="hLr-A5-uFR"/>
+                                        <constraint firstItem="GIb-vO-Fdg" firstAttribute="top" secondItem="e8h-pF-RzK" secondAttribute="top" constant="2" id="lQ3-fB-XhJ"/>
+                                        <constraint firstItem="GIb-vO-Fdg" firstAttribute="leading" secondItem="e8h-pF-RzK" secondAttribute="leading" id="lWX-fU-y89"/>
+                                        <constraint firstAttribute="centerX" secondItem="GIb-vO-Fdg" secondAttribute="centerX" id="pCL-az-tV4"/>
                                         <constraint firstAttribute="centerX" secondItem="GIb-vO-Fdg" secondAttribute="centerX" constant="84" id="psc-Hg-3dm"/>
+                                        <constraint firstAttribute="bottom" secondItem="GIb-vO-Fdg" secondAttribute="bottom" constant="2" id="uOH-v9-yTU"/>
+                                        <constraint firstItem="GIb-vO-Fdg" firstAttribute="top" secondItem="e8h-pF-RzK" secondAttribute="top" constant="2" id="wLs-Vf-Gr2"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="3ia-xq-m23"/>
+                                            <exclude reference="47o-1T-diz"/>
+                                            <exclude reference="78f-X4-irY"/>
+                                            <exclude reference="CZD-gE-HUs"/>
+                                            <exclude reference="Fda-7d-laq"/>
+                                            <exclude reference="T6p-7x-ySw"/>
+                                            <exclude reference="Wg0-2v-8Ai"/>
+                                            <exclude reference="pCL-az-tV4"/>
+                                            <exclude reference="psc-Hg-3dm"/>
+                                            <exclude reference="uOH-v9-yTU"/>
+                                            <exclude reference="wLs-Vf-Gr2"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="photoImage" destination="GIb-vO-Fdg" id="ZfM-yz-V3c"/>
@@ -67,6 +102,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4y-pI-OMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1998" y="1060"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B5E-R6-4ze">
+            <objects>
+                <viewController id="KNl-0i-aEv" customClass="ViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y5Y-vs-sWg"/>
+                        <viewControllerLayoutGuide type="bottom" id="G7F-ga-UDh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E2Z-sK-IR7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnf-5u-Nom">
+                                <rect key="frame" x="226" y="285" width="157" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cOV-JH-vnS"/>
+                                    <constraint firstAttribute="width" constant="157" id="sq5-67-UwP"/>
+                                </constraints>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OZx-HX-2Qa" kind="show" id="eqm-FY-4bc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Dnf-5u-Nom" secondAttribute="centerY" id="3v9-2n-QNh"/>
+                            <constraint firstAttribute="centerX" secondItem="Dnf-5u-Nom" secondAttribute="centerX" constant="-4.5" id="NKc-2c-wGT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="Dnf-5u-Nom" id="CIH-rU-cWP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y02-ou-z0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-316" y="377"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fEz-Kl-HQx">
@@ -123,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yib-Ah-GLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="1060"/>
+            <point key="canvasLocation" x="1191" y="1137"/>
         </scene>
     </scenes>
 </document>

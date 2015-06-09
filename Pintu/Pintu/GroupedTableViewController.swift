@@ -100,6 +100,23 @@ class GroupedTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 444
+    }
+    
+//    
+//    
+//    func configureTableView() {
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 160.0
+//    }
+//    
+    
 
     /*
     // Override to support conditional editing of the table view.
