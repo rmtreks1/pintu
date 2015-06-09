@@ -73,6 +73,32 @@ class DataSource: NSObject {
     }
     
     
+    func deleteMedia(section: Int, row: Int){
+        let asset = self.photosGroupedByDate[section][row]
+//        PHAssetChangeRequest.deleteAssets([asset])
+        self.photosGroupedByDate[section].removeAtIndex(row)
+        
+        
+        
+        PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+            //Delete Photo
+            PHAssetChangeRequest.deleteAssets([asset])
+            },
+            completionHandler: {(success, error)in
+                if(success){
+                    
+                    // Move to the main thread to execute
+                    dispatch_async(dispatch_get_main_queue(), {
+                        println("Trashed")
+                    })
+                    
+                }else{
+                    println("Error: \(error)")
+                }
+        })
+        
+        
+    }
     
     
     

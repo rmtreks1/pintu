@@ -150,7 +150,10 @@ class GroupedTableViewController: UITableViewController {
             println("Delete this shit permanently")
             // remove the data
             let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
-            DataSource.sharedInstance.photosGroupedByDate[indexPath.section].removeAtIndex(indexPath.row)
+            
+            DataSource.sharedInstance.deleteMedia(indexPath.section, row: indexPath.row)
+            
+
             
             
             // Delete the row from the data source
