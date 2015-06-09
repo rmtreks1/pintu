@@ -109,13 +109,6 @@ class GroupedTableViewController: UITableViewController {
         return 444
     }
     
-//    
-//    
-//    func configureTableView() {
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 160.0
-//    }
-//    
     
 
     /*
@@ -126,17 +119,49 @@ class GroupedTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            // remove the data
+            let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
+            DataSource.sharedInstance.photosGroupedByDate[indexPath.section].removeAtIndex(indexPath.row)
+            
+            
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+       
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        let archiveAction = UITableViewRowAction(style: .Default, title: "Archive") { (UITableViewRowAction, NSIndexPath) -> Void in
+            println("Archive this")
+        }
+        archiveAction.backgroundColor = UIColor.lightGrayColor()
+        
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (UITableViewRowAction, NSIndexPath) -> Void in
+            println("Delete this shit permanently")
+            // remove the data
+            let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
+            DataSource.sharedInstance.photosGroupedByDate[indexPath.section].removeAtIndex(indexPath.row)
+            
+            
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
+        
+        return [deleteAction, archiveAction]
+    }
+
+    
 
     /*
     // Override to support rearranging the table view.
