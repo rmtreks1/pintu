@@ -21,7 +21,7 @@ class MainPhotoVC: UIViewController {
     @IBOutlet var commentTextView: UITextView!
     
     // core data
-    var comments = [NSManagedObject]()
+    var media = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ class MainPhotoVC: UIViewController {
             error: &error) as? [NSManagedObject]
         
         if let results = fetchedResults {
-            self.comments = results
+            self.media = results
             println("found \(results.count) saved comments")
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
@@ -115,6 +115,7 @@ class MainPhotoVC: UIViewController {
         
         //3
         newMedia.setValue(comment, forKey: "comments")
+        newMedia.setValue(self.asset!.localIdentifier, forKey: "assetIdentifier")
         
         //4
         var error: NSError?
@@ -122,7 +123,7 @@ class MainPhotoVC: UIViewController {
             println("Could not save \(error), \(error?.userInfo)")
         }  
         //5
-        comments.append(newMedia)
+        self.media.append(newMedia)
     }
 
     
