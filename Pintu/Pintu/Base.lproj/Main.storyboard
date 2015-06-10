@@ -99,20 +99,43 @@
                                     <constraint firstItem="5PU-DT-KhI" firstAttribute="centerY" secondItem="fkg-cC-0qk" secondAttribute="centerY" id="jnC-B5-mVX"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="insert comment" translatesAutoresizingMaskIntoConstraints="NO" id="boS-gm-WNd">
+                                <rect key="frame" x="15" y="148" width="289" height="150"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="pMs-Qd-rRl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="boS-gm-WNd" firstAttribute="leading" secondItem="DrQ-wY-b7s" secondAttribute="leading" constant="15" id="A0s-3y-kfI"/>
                             <constraint firstItem="vKp-xi-wqT" firstAttribute="leading" secondItem="DrQ-wY-b7s" secondAttribute="leading" id="Nzt-Ki-fYb"/>
                             <constraint firstItem="vKp-xi-wqT" firstAttribute="top" secondItem="Q8U-et-glP" secondAttribute="bottom" id="aLI-cF-nC8"/>
+                            <constraint firstItem="boS-gm-WNd" firstAttribute="top" secondItem="vKp-xi-wqT" secondAttribute="bottom" constant="15" id="ai9-KR-q7U"/>
+                            <constraint firstAttribute="trailing" secondItem="boS-gm-WNd" secondAttribute="trailing" constant="16" id="dHV-i3-3Pn"/>
                             <constraint firstAttribute="trailing" secondItem="vKp-xi-wqT" secondAttribute="trailing" id="oEO-Vv-XkK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="g6c-cE-bqT" appends="YES" id="Uhx-SE-rEU"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="84n-MZ-4CJ"/>
                     <connections>
+                        <outlet property="commentTextView" destination="boS-gm-WNd" id="quS-mP-ebY"/>
                         <outlet property="fullScreenMedia" destination="fkg-cC-0qk" id="zDo-ex-yuk"/>
+                        <outlet property="locationLabel" destination="5PU-DT-KhI" id="TQJ-ct-Mhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JuZ-JP-hcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g6c-cE-bqT">
+                    <connections>
+                        <action selector="tapGesturePressed:" destination="5Cs-zv-Dbb" id="KKV-3Q-8vM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1476" y="356"/>
         </scene>

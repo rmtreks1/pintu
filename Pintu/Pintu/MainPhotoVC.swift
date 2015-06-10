@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import CoreLocation
 
 class MainPhotoVC: UIViewController {
 
@@ -15,16 +16,24 @@ class MainPhotoVC: UIViewController {
     var asset: PHAsset?
     let manager = PHImageManager.defaultManager()
     let imageOptions = PHImageRequestOptions()
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var tapGesturePressed: UITapGestureRecognizer!
+    @IBOutlet var commentTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // set the location
+        
+        
+        
+        
+        // set the image
         imageOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.HighQualityFormat
-        let fullScreen = self.view.frame.size
+        let thumbnail = self.fullScreenMedia.frame.size
         
-
-        
-        manager.requestImageForAsset(asset, targetSize: fullScreen, contentMode: PHImageContentMode.AspectFit, options: imageOptions) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
+        manager.requestImageForAsset(asset, targetSize: thumbnail, contentMode: PHImageContentMode.AspectFit, options: imageOptions) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
             self.fullScreenMedia.image = result
         }
 
@@ -37,6 +46,16 @@ class MainPhotoVC: UIViewController {
     }
     
 
+    
+    @IBAction func tapGesturePressed(sender: UITapGestureRecognizer) {
+        println("tapped")
+        self.commentTextView.resignFirstResponder()
+        if let comment = self.commentTextView.text {
+            println(comment)
+        }
+
+    }
+    
     /*
     // MARK: - Navigation
 
