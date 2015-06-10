@@ -67,6 +67,7 @@ class MainPhotoVC: UIViewController {
         if let results = fetchedResults {
             self.media = results
             println("found \(results.count) saved comments")
+            commentForAsset(self.asset!)
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
@@ -127,6 +128,17 @@ class MainPhotoVC: UIViewController {
     }
 
     
+    func commentForAsset(asset: PHAsset) {
+        for media in self.media {
+            let mediaIdentifier = media.valueForKey("assetIdentifier") as! String
+            if mediaIdentifier == asset.localIdentifier {
+                println("match found")
+                let comment = media.valueForKey("comments") as! String
+                println(comment)
+//                break
+            }
+        }
+    }
     
     
     
