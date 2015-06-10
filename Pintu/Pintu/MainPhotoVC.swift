@@ -56,6 +56,10 @@ class MainPhotoVC: UIViewController {
         
         //2
         let fetchRequest = NSFetchRequest(entityName:"Media")
+        let predicate = NSPredicate(format: "assetIdentifier == %@", self.asset!.localIdentifier)
+        fetchRequest.predicate = predicate
+        
+        
         
         //3
         var error: NSError?
@@ -132,10 +136,8 @@ class MainPhotoVC: UIViewController {
         for media in self.media {
             let mediaIdentifier = media.valueForKey("assetIdentifier") as! String
             if mediaIdentifier == asset.localIdentifier {
-                println("match found")
                 let comment = media.valueForKey("comments") as! String
                 println(comment)
-//                break
             }
         }
     }
