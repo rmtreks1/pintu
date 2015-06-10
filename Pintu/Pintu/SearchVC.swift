@@ -9,10 +9,9 @@
 import UIKit
 import CoreData
 
-class SearchVC: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class SearchVC: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
-    
     // core data
     var searchResults = [NSManagedObject]()
     
@@ -86,21 +85,21 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return self.searchResults.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell;
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell;
         
         
-        return cell;
+        return cell
     }
     
 

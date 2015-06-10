@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0129A7D81B28566E00DA6BCF /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129A7D71B28566E00DA6BCF /* SearchVC.swift */; };
+		0129A7DC1B28809C00DA6BCF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */; };
 		015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449A11B26E72900B1C9A9 /* AppDelegate.swift */; };
 		015449A51B26E72900B1C9A9 /* Pintu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015449A31B26E72900B1C9A9 /* Pintu.xcdatamodeld */; };
 		015449A71B26E72900B1C9A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449A61B26E72900B1C9A9 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		0129A7D71B28566E00DA6BCF /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0154499C1B26E72900B1C9A9 /* Pintu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pintu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015449A01B26E72900B1C9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		015449A11B26E72900B1C9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */,
 				0129A7D71B28566E00DA6BCF /* SearchVC.swift */,
 				015449A61B26E72900B1C9A9 /* ViewController.swift */,
+				0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0129A7DC1B28809C00DA6BCF /* SearchViewController.swift in Sources */,
 				015449CE1B26E9C600B1C9A9 /* GroupedTableViewController.swift in Sources */,
 				015449A71B26E72900B1C9A9 /* ViewController.swift in Sources */,
 				015449C51B26E74400B1C9A9 /* DateExtension.swift in Sources */,
