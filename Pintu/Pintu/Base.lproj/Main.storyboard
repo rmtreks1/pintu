@@ -166,6 +166,7 @@
                     <navigationItem key="navigationItem" id="YqF-hM-W3D"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="tCK-Wa-uQI" id="DtE-4M-es0"/>
                         <outlet property="searchDisplayController" destination="koI-0q-5Wr" id="Aq4-P1-UeI"/>
                     </connections>
                 </viewController>
