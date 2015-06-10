@@ -85,11 +85,11 @@
                                             <constraint firstAttribute="height" constant="21" id="uxN-nR-ZhZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="5PU-DT-KhI" firstAttribute="leading" secondItem="fkg-cC-0qk" secondAttribute="trailing" constant="20" id="Nod-Zn-J5Q"/>
                                     <constraint firstItem="fkg-cC-0qk" firstAttribute="leading" secondItem="vKp-xi-wqT" secondAttribute="leading" constant="8" id="QLh-dv-IRV"/>
@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="1476" y="356"/>
         </scene>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="XvY-20-UI3">
             <objects>
-                <viewController id="EVg-7e-mkf" sceneMemberID="viewController">
+                <viewController title="Search" id="EVg-7e-mkf" customClass="SearchVC" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Of9-ab-QnF"/>
                         <viewControllerLayoutGuide type="bottom" id="1ZC-Ia-ram"/>
@@ -150,13 +150,52 @@
                     <view key="view" contentMode="scaleToFill" id="gZR-hw-pjR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tCK-Wa-uQI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3RW-Zx-RKi"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EVg-7e-mkf" id="caS-7y-rQ5"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tCK-Wa-uQI" secondAttribute="trailing" id="TAW-HI-FDq"/>
+                            <constraint firstItem="tCK-Wa-uQI" firstAttribute="top" secondItem="Of9-ab-QnF" secondAttribute="bottom" id="X7M-8m-les"/>
+                            <constraint firstItem="tCK-Wa-uQI" firstAttribute="leading" secondItem="gZR-hw-pjR" secondAttribute="leading" id="sa2-E4-bFQ"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="XZ3-8q-4sO"/>
                     <navigationItem key="navigationItem" id="YqF-hM-W3D"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="koI-0q-5Wr" id="Aq4-P1-UeI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4y-pI-OMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="tVS-a7-UMj">
+                    <connections>
+                        <outlet property="delegate" destination="EVg-7e-mkf" id="D61-Gc-YkH"/>
+                        <outlet property="searchContentsController" destination="EVg-7e-mkf" id="8iJ-5Z-v3V"/>
+                        <outlet property="searchResultsDataSource" destination="EVg-7e-mkf" id="O35-Cn-IKo"/>
+                        <outlet property="searchResultsDelegate" destination="EVg-7e-mkf" id="Doe-XK-XTi"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="koI-0q-5Wr">
+                    <connections>
+                        <outlet property="delegate" destination="EVg-7e-mkf" id="5d3-jn-Q8Q"/>
+                        <outlet property="searchBar" destination="tCK-Wa-uQI" id="FmF-aT-Zpn"/>
+                        <outlet property="searchContentsController" destination="EVg-7e-mkf" id="9ud-XB-o9q"/>
+                        <outlet property="searchResultsDataSource" destination="EVg-7e-mkf" id="Dj7-zG-VCt"/>
+                        <outlet property="searchResultsDelegate" destination="EVg-7e-mkf" id="oKZ-t6-y0Q"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1065.5999999999999" y="1003.4666666666667"/>
+            <point key="canvasLocation" x="224" y="1112"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B5E-R6-4ze">
@@ -210,18 +249,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Mu-Jq-Zs3" kind="relationship" relationship="viewControllers" id="QPz-Fs-arI"/>
-                        <segue destination="Lka-X9-hou" kind="relationship" relationship="viewControllers" id="FtD-fa-nSI"/>
+                        <segue destination="EVg-7e-mkf" kind="relationship" relationship="viewControllers" id="Bbe-3v-FD1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMN-rm-u0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="356.89333333333332"/>
         </scene>
-        <!--All Photos-->
+        <!--Navigation Controller-->
         <scene sceneID="el1-pf-cGN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Mu-Jq-Zs3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All Photos" id="Zhi-aj-hVD"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="Zhi-aj-hVD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dKm-U5-zxg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -235,25 +274,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYj-ro-YXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632.5333333333333" y="356.89333333333332"/>
-        </scene>
-        <!--Search-->
-        <scene sceneID="mh6-ya-g2o">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lka-X9-hou" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="vMb-o7-fmj"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Myo-kf-8Qi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EVg-7e-mkf" kind="relationship" relationship="rootViewController" id="20u-TH-YlZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yib-Ah-GLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="635.20000000000005" y="1076.3599999999999"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
