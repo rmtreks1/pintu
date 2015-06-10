@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchVC: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
+    
+    // core data
+    var searchResults = [NSManagedObject]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,9 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
         self.searchBar.delegate = self
 
         // Do any additional setup after loading the view.
+        
+      
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +52,36 @@ class SearchVC: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-      println("text changed")
+        println("text changed..... \(searchText)")
+        
+        
+        
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Media")
+        
+        let predicate = NSPredicate(format: "comments CONTAINS %@", searchText)
+        fetchRequest.predicate = predicate
+        
+        
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            self.searchResults = results
+            println("found \(results.count) saved comments")
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
     }
     
     
