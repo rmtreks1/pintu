@@ -8,7 +8,7 @@
 
 import UIKit
 import Photos
-import CoreLocation
+import CoreData
 
 class MainPhotoVC: UIViewController {
 
@@ -19,6 +19,9 @@ class MainPhotoVC: UIViewController {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var tapGesturePressed: UITapGestureRecognizer!
     @IBOutlet var commentTextView: UITextView!
+    
+    // core data
+    var comments = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,38 @@ class MainPhotoVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Media")
+        
+        //3
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            self.comments = results
+            println("found \(results.count) saved comments")
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,9 +87,50 @@ class MainPhotoVC: UIViewController {
         self.commentTextView.resignFirstResponder()
         if let comment = self.commentTextView.text {
             println(comment)
+            saveComment(comment)
         }
 
     }
+    
+    
+    
+    
+    // MARK: - Core Data
+    func saveComment(comment: String) {
+        
+        println("saving comment")
+        //1
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Media",
+            inManagedObjectContext:
+            managedContext)
+        
+        let newMedia = NSManagedObject(entity: entity!,
+            insertIntoManagedObjectContext:managedContext)
+        
+        //3
+        newMedia.setValue(comment, forKey: "comments")
+        
+        //4
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }  
+        //5
+        comments.append(newMedia)
+    }
+
+    
+    
+    
+    
+    
+    
     
     /*
     // MARK: - Navigation
