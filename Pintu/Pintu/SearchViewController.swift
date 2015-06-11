@@ -12,8 +12,6 @@ import CoreData
 class SearchViewController: UITableViewController {
 
     @IBOutlet var searchBar: UISearchBar!
-    // core data
-    var searchResults = [NSManagedObject]()
     var uniqueSearchResults = [String]()
 
     
@@ -49,18 +47,10 @@ class SearchViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
-//        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
-        
-        
-        // get the comment
-//        let media = self.searchResults[indexPath.row]
         let comment = self.uniqueSearchResults[indexPath.row] as String
         
         // Configure the cell...
         cell.textLabel?.text = comment
-        
-        // get the comment
         
 
         return cell
@@ -173,31 +163,6 @@ class SearchViewController: UITableViewController {
             }
             println("\(self.uniqueSearchResults.count) unique search results")
         }
-        
-       
-        /*
-        var stringResultsArray: [String] = []
-        for var i = 0; i < results.count; i++ {
-            if let dic = (results[i] as? [String : String]){
-                if let yearString = dic["year"]?{
-                    stringResultsArray.append(yearString)
-                }
-            }
-        }
-        */
-        
-        
-        
-//        let fetchedResults =
-//        managedContext.executeFetchRequest(fetchRequest,
-//            error: &error) as? [NSManagedObject]
-//        
-//        if let results = fetchedResults {
-//            self.searchResults = results
-//            println("found \(results.count) saved comments")
-//        } else {
-//            println("Could not fetch \(error), \(error!.userInfo)")
-//        }
     }
 
     
