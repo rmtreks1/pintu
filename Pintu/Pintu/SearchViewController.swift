@@ -49,8 +49,14 @@ class SearchViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
 //        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
 
+        
+        
+        // get the comment
+        let media = self.searchResults[indexPath.row]
+        let comment = media.valueForKey("comments") as! String
+        
         // Configure the cell...
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = comment
         
         // get the comment
         
@@ -155,5 +161,11 @@ class SearchViewController: UITableViewController {
         }
     }
 
+    
+    
+    
+    
+    // MARK: - Search Functionality
+    
 
 }
