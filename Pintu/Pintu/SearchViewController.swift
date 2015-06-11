@@ -154,8 +154,7 @@ class SearchViewController: UITableViewController {
             
             
             // 4 Fetch the PHAssets
-            let searchAssets = DataSource.sharedInstance.retrievePHAssetsBasedOnIdentifiers(uniqueAssetsIdentifier)
-//            let searchAssets = getPHAssets(uniqueAssetsIdentifier)
+            let searchAssets = SearchHelper.sharedInstance.retrievePHAssetsBasedOnIdentifiers(uniqueAssetsIdentifier)
             
             
             //5. Set the Assets
@@ -163,32 +162,7 @@ class SearchViewController: UITableViewController {
             
         }
     }
-    
-    
-    /*
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    if segue.identifier == "SearchSegue"{
-    
-    let destinationVC = segue.destinationViewController as! MainPhotoVC
-    let cell = sender as! MomentsTableViewCell
-    let indexPath = self.tableView.indexPathForCell(cell)
-    let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row) // fix this
-    
-    destinationVC.asset = asset
-    
-    }
-    
-    println("preparing for segue")
-    // Pass the selected object to the new view controller.
-    }
-    
-    
-    
-    
-    
-    
-    */
+   
     
     
     // MARK: - Search Bar
