@@ -14,7 +14,7 @@ class SearchViewController: UITableViewController {
     @IBOutlet var searchBar: UISearchBar!
     // core data
     var searchResults = [NSManagedObject]()
-    var uniqueSearchResults = []
+    var uniqueSearchResults = [String]()
 
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class SearchViewController: UITableViewController {
         
         // get the comment
 //        let media = self.searchResults[indexPath.row]
-        let comment = self.uniqueSearchResults[indexPath.row] as! String
+        let comment = self.uniqueSearchResults[indexPath.row] as String
         
         // Configure the cell...
         cell.textLabel?.text = comment
@@ -154,6 +154,7 @@ class SearchViewController: UITableViewController {
         //3
         var error: NSError?
         
+        self.uniqueSearchResults = []
         
         let uniqueFetchedResultsDictionary = managedContext.executeFetchRequest(fetchRequest, error: nil)
         println("fetched \(uniqueFetchedResultsDictionary!.count) results")
@@ -166,9 +167,11 @@ class SearchViewController: UITableViewController {
                 if let result = (results[i] as? [String : String]){
                     if let comment = result["comments"]{
                         println(comment)
-                    } 
+                        self.uniqueSearchResults.append(comment)
+                    }
                 }
             }
+            println("\(self.uniqueSearchResults.count) unique search results")
         }
         
        
