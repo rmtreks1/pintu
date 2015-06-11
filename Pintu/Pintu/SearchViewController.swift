@@ -14,6 +14,8 @@ class SearchViewController: UITableViewController {
     @IBOutlet var searchBar: UISearchBar!
     // core data
     var searchResults = [NSManagedObject]()
+    var uniqueSearchResults = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,7 @@ class SearchViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.searchResults.count
+        return self.uniqueSearchResults.count
     }
 
     
@@ -52,8 +54,8 @@ class SearchViewController: UITableViewController {
         
         
         // get the comment
-        let media = self.searchResults[indexPath.row]
-        let comment = media.valueForKey("comments") as! String
+//        let media = self.searchResults[indexPath.row]
+        let comment = self.uniqueSearchResults[indexPath.row] as! String
         
         // Configure the cell...
         cell.textLabel?.text = comment
@@ -143,22 +145,56 @@ class SearchViewController: UITableViewController {
         
         let predicate = NSPredicate(format: "comments CONTAINS %@", searchText)
         fetchRequest.predicate = predicate
-        
+        fetchRequest.resultType = NSFetchRequestResultType.DictionaryResultType
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.returnsDistinctResults = true
+        fetchRequest.propertiesToFetch = NSArray(object: "comments") as [AnyObject]
         
         
         //3
         var error: NSError?
         
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as? [NSManagedObject]
         
-        if let results = fetchedResults {
-            self.searchResults = results
-            println("found \(results.count) saved comments")
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
+        let uniqueFetchedResultsDictionary = managedContext.executeFetchRequest(fetchRequest, error: nil)
+        println("fetched \(uniqueFetchedResultsDictionary!.count) results")
+        
+        println(uniqueFetchedResultsDictionary!.first)
+        
+        if let results = uniqueFetchedResultsDictionary{
+            var resultsArray: [String] = []
+            for var i = 0; i < results.count; i++ {
+                if let result = (results[i] as? [String : String]){
+                    if let comment = result["comments"]{
+                        println(comment)
+                    } 
+                }
+            }
         }
+        
+       
+        /*
+        var stringResultsArray: [String] = []
+        for var i = 0; i < results.count; i++ {
+            if let dic = (results[i] as? [String : String]){
+                if let yearString = dic["year"]?{
+                    stringResultsArray.append(yearString)
+                }
+            }
+        }
+        */
+        
+        
+        
+//        let fetchedResults =
+//        managedContext.executeFetchRequest(fetchRequest,
+//            error: &error) as? [NSManagedObject]
+//        
+//        if let results = fetchedResults {
+//            self.searchResults = results
+//            println("found \(results.count) saved comments")
+//        } else {
+//            println("Could not fetch \(error), \(error!.userInfo)")
+//        }
     }
 
     
