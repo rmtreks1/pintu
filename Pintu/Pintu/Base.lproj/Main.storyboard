@@ -149,7 +149,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5gk-l6-X2f" rowHeight="44" style="IBUITableViewCellStyleDefault" id="NB0-ie-6Lk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="5gk-l6-X2f" rowHeight="44" style="IBUITableViewCellStyleDefault" id="NB0-ie-6Lk">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NB0-ie-6Lk" id="X3V-Df-136">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -162,6 +162,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pFi-xh-ezB" kind="push" id="e4k-G1-ElG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -291,4 +294,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="e4k-G1-ElG"/>
+    </inferredMetricsTieBreakers>
 </document>

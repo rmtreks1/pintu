@@ -10,14 +10,19 @@ import UIKit
 import Photos
 
 class GroupedTableViewController: UITableViewController {
-
+    
+    var assets = [[PHAsset]]()
+    var isSearch: Bool?
     let formatter = NSDateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataSource.sharedInstance.populatePhotos()
-        DataSource.sharedInstance.groupIntoDays()
+        if isSearch != true {
+            DataSource.sharedInstance.populatePhotos()
+            DataSource.sharedInstance.groupIntoDays()
+            assets = DataSource.sharedInstance.photosGroupedByDate
+        }
         
         
         formatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -37,6 +42,12 @@ class GroupedTableViewController: UITableViewController {
 
     }
     
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.isSearch = false
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,14 +61,14 @@ class GroupedTableViewController: UITableViewController {
         // Return the number of sections.
         println(DataSource.sharedInstance.photosGroupedByDate.count)
         
-        return DataSource.sharedInstance.photosGroupedByDate.count
+        return self.assets.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
-        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[section]
+        let dateRangeAssets = self.assets[section]
         
         return dateRangeAssets.count
     }
@@ -65,7 +76,7 @@ class GroupedTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[section]
+        let dateRangeAssets = self.assets[section]
 //        println("section is \(section) and dateRangeAssets count is: \(dateRangeAssets.count)")
         if dateRangeAssets.count > 0 {
             
@@ -86,7 +97,7 @@ class GroupedTableViewController: UITableViewController {
         let thumbnail = CGSizeMake(CGFloat(150), CGFloat(150))
         
         // getting the asset
-        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
+        let dateRangeAssets = self.assets[indexPath.section]
         let asset = dateRangeAssets[indexPath.row] as PHAsset
         
         // get the image
@@ -125,14 +136,14 @@ class GroupedTableViewController: UITableViewController {
         if editingStyle == .Delete {
             
             // remove the data
-            let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
-            DataSource.sharedInstance.photosGroupedByDate[indexPath.section].removeAtIndex(indexPath.row)
+            let dateRangeAssets = self.assets[indexPath.section]
+            self.assets[indexPath.section].removeAtIndex(indexPath.row)
             
             
-            // Delete the row from the data source
+            if self.isSearch != true {
+                DataSource.sharedInstance.photosGroupedByDate[indexPath.section].removeAtIndex(indexPath.row)
+            }
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-       
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -149,9 +160,14 @@ class GroupedTableViewController: UITableViewController {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (UITableViewRowAction, NSIndexPath) -> Void in
             println("Delete this shit permanently")
             // remove the data
-            let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
+            let dateRangeAssets = self.assets[indexPath.section]
+            self.assets[indexPath.section].removeAtIndex(indexPath.row)
             
-            DataSource.sharedInstance.deleteMedia(indexPath.section, row: indexPath.row)
+            // this doesn't work if it's a Search
+            if self.isSearch != true {
+                DataSource.sharedInstance.deleteMedia(indexPath.section, row: indexPath.row)
+            }
+            
             
 
             
@@ -192,7 +208,7 @@ class GroupedTableViewController: UITableViewController {
             let destinationVC = segue.destinationViewController as! MainPhotoVC
             let cell = sender as! MomentsTableViewCell
             let indexPath = self.tableView.indexPathForCell(cell)
-            let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row)
+            let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row) // fix this
             
             destinationVC.asset = asset
             
