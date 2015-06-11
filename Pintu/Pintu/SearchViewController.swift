@@ -122,8 +122,16 @@ class SearchViewController: UITableViewController {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         println("text changed..... \(searchText)")
-        
-        
+        runSearch(searchText)
+    }
+
+    
+    
+    
+    
+    // MARK: - Search Functionality
+    
+    func runSearch(searchText: String){
         
         //1
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -163,13 +171,11 @@ class SearchViewController: UITableViewController {
             }
             println("\(self.uniqueSearchResults.count) unique search results")
         }
-    }
 
+        
+        
+    }
     
-    
-    
-    
-    // MARK: - Search Functionality
     
 
 }
