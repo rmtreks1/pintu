@@ -163,7 +163,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pFi-xh-ezB" kind="push" id="e4k-G1-ElG"/>
+                                    <segue destination="pFi-xh-ezB" kind="push" identifier="SearchSegue" id="e4k-G1-ElG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

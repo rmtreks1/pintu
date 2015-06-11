@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Photos
 
 class SearchViewController: UITableViewController {
 
@@ -92,14 +93,100 @@ class SearchViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SearchSegue" {
+            let destinationVC = segue.destinationViewController as! GroupedTableViewController
+            
+            // let vc know that triggered by search
+            destinationVC.isSearch = true
+            
+            
+            // get search text
+            let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()
+            let searchText = self.uniqueSearchResults[indexPath!.row]
+            
+  
+            // get list of asset local identifiers for the search term
+            //1
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext!
+            
+            //2
+            let fetchRequest = NSFetchRequest(entityName:"Media")
+            
+            let predicate = NSPredicate(format: "comments ==%@", searchText)
+            fetchRequest.predicate = predicate
+            fetchRequest.resultType = NSFetchRequestResultType.DictionaryResultType
+            fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.returnsDistinctResults = true
+            fetchRequest.propertiesToFetch = NSArray(object: "assetIdentifier") as [AnyObject]
+            
+            
+            //3
+            var error: NSError?
+            
+            var uniqueAssetsIdentifier = [String]()
+//            var searchAssets = [PHAsset]()
+            
+            let uniqueFetchedResultsDictionary = managedContext.executeFetchRequest(fetchRequest, error: nil)
+            println("fetched \(uniqueFetchedResultsDictionary!.count) results")
+            
+            println(uniqueFetchedResultsDictionary!.first)
+            
+            if let results = uniqueFetchedResultsDictionary{
+                var resultsArray: [String] = []
+                for var i = 0; i < results.count; i++ {
+                    if let result = (results[i] as? [String : String]){
+                        if let asset = result["assetIdentifier"]{
+                            println(asset)
+                            uniqueAssetsIdentifier.append(asset)
+                        }
+                    }
+                }
+                println("\(uniqueAssetsIdentifier.count) unique search results")
+            }
+
+            
+            
+            
+            // 4 Fetch the PHAssets
+            let searchAssets = getPHAssets(uniqueAssetsIdentifier)
+            
+            
+            //5. Set the Assets
+            destinationVC.assets = searchAssets
+            
+        }
     }
+    
+    
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using [segue destinationViewController].
+    if segue.identifier == "SearchSegue"{
+    
+    let destinationVC = segue.destinationViewController as! MainPhotoVC
+    let cell = sender as! MomentsTableViewCell
+    let indexPath = self.tableView.indexPathForCell(cell)
+    let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row) // fix this
+    
+    destinationVC.asset = asset
+    
+    }
+    
+    println("preparing for segue")
+    // Pass the selected object to the new view controller.
+    }
+    
+    
+    
+    
+    
+    
     */
     
     
@@ -176,6 +263,56 @@ class SearchViewController: UITableViewController {
         
     }
     
+    
+    
+    func getPHAssets(identifiers: [String]) -> [[PHAsset]]{
+        
+            
+            let fetchOptions = PHFetchOptions()
+            fetchOptions.sortDescriptors = [
+                NSSortDescriptor(key: "creationDate", ascending: false)
+            ]
+
+        let fetchResult = PHAsset.fetchAssetsWithLocalIdentifiers(identifiers, options: fetchOptions) as PHFetchResult
+        
+        println("fetched \(fetchResult.count) out of \(identifiers.count)")
+
+        
+        
+        // assets grouped into date
+        // for timing
+        println("starting groupIntoDays \(NSDate())")
+        
+        // clear out existing values
+        var photosGroupedByDate = [[PHAsset]]()
+        var currentDateOfFilter = NSDate()
+        var currentAssetsGroup = [PHAsset]()
+        
+        // loop through PHFetchResult to separate into arrays where all dates are the same
+        let retrievedPhotosFetchResult = fetchResult
+        for index in 0...retrievedPhotosFetchResult.count-1 {
+            let value = retrievedPhotosFetchResult[index] as! PHAsset
+            if NSDate.areDatesSameDay(currentDateOfFilter, dateTwo: value.creationDate) {
+                currentAssetsGroup.append(value)
+            } else {
+                if currentAssetsGroup.count > 0 {
+                    photosGroupedByDate.append(currentAssetsGroup)
+                }
+                currentAssetsGroup = []
+                currentAssetsGroup.append(value)
+                currentDateOfFilter = value.creationDate
+            }
+        }
+        
+        if currentAssetsGroup.count > 0 {
+            photosGroupedByDate.append(currentAssetsGroup)
+        }
+        
+        
+        println("number of days: \(photosGroupedByDate.count)")
+
+        return photosGroupedByDate
+    }
     
 
 }
