@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1476" y="356"/>
         </scene>
-        <!--Item-->
+        <!--Search View Controller-->
         <scene sceneID="cog-b0-Pgo">
             <objects>
                 <tableViewController id="WkP-Kv-7Rk" customClass="SearchViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                             <outlet property="delegate" destination="WkP-Kv-7Rk" id="csE-gL-AMe"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="ed0-1D-r7i"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="ed0-1D-r7i"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Iq0-Kc-c3u" id="Pca-3A-Ps4"/>
