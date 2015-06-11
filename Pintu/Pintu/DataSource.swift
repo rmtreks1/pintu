@@ -31,31 +31,28 @@ class DataSource: NSObject {
 
         println("photos: \(photosFetchResult!.count) and videos: \(videosFetchResult!.count)")
         
-        groupIntoDays()
+        self.photosGroupedByDate = groupIntoDays(self.photosFetchResult!)
 
         
     }
  
     
-    func groupIntoDays(){
-        
-        // for timing
-        println("starting groupIntoDays \(NSDate())")
+    func groupIntoDays(fetchResult: PHFetchResult) -> [[PHAsset]]{
         
         // clear out existing values
-        self.photosGroupedByDate = []
+        var assetsGroupedByDate = [[PHAsset]]()
         var currentDateOfFilter = NSDate()
         var currentAssetsGroup = [PHAsset]()
         
         // loop through PHFetchResult to separate into arrays where all dates are the same
-        if let retrievedPhotosFetchResult = photosFetchResult {
-            for index in 0...retrievedPhotosFetchResult.count-1 {
-                let value = retrievedPhotosFetchResult[index] as! PHAsset
+//        if let retrievedPhotosFetchResult = photosFetchResult
+            for index in 0..<fetchResult.count {
+                let value = fetchResult[index] as! PHAsset
                 if NSDate.areDatesSameDay(currentDateOfFilter, dateTwo: value.creationDate) {
                     currentAssetsGroup.append(value)
                 } else {
                     if currentAssetsGroup.count > 0 {
-                        photosGroupedByDate.append(currentAssetsGroup)
+                        assetsGroupedByDate.append(currentAssetsGroup)
                     }
                     currentAssetsGroup = []
                     currentAssetsGroup.append(value)
@@ -64,11 +61,13 @@ class DataSource: NSObject {
             }
             
             if currentAssetsGroup.count > 0 {
-               photosGroupedByDate.append(currentAssetsGroup)
+               assetsGroupedByDate.append(currentAssetsGroup)
             }
-        }
+        
      
-        println("number of days: \(self.photosGroupedByDate.count)")
+        println("number of days: \(assetsGroupedByDate.count)")
+        
+        return assetsGroupedByDate
         
     }
     

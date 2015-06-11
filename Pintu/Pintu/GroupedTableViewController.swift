@@ -20,7 +20,6 @@ class GroupedTableViewController: UITableViewController {
         
         if isSearch != true {
             DataSource.sharedInstance.populatePhotos()
-            DataSource.sharedInstance.groupIntoDays()
             assets = DataSource.sharedInstance.photosGroupedByDate
         }
         
