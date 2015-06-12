@@ -39,6 +39,8 @@ class GroupedTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.tabBarItem.badgeValue = String(DataSource.sharedInstance.uncategorizedPhotosCount())
+        
 
     }
     

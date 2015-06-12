@@ -45,6 +45,44 @@ class DataSource: NSObject {
     }
  
     
+    
+    
+    
+    
+    
+    
+    
+    
+    func uncategorizedPhotosCount() -> Int{
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [
+            NSSortDescriptor(key: "creationDate", ascending: false)
+        ]
+        
+        photosFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
+        
+        let categorizedAssets = categorizedAssetList()
+        
+        if let _photosFetchResult = photosFetchResult {
+            let uncategorizedCount = _photosFetchResult.count - categorizedAssets.count
+            return uncategorizedCount
+        }
+
+        return 0
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func groupIntoDays(fetchResult: PHFetchResult) -> [[PHAsset]]{
         
         // clear out existing values
