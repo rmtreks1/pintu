@@ -229,4 +229,17 @@ class GroupedTableViewController: UITableViewController {
 
     
     
+    
+    @IBAction func refreshButtonPressed(sender: UIBarButtonItem) {
+        println("refresh button pressed")
+        DataSource.sharedInstance.populatePhotos()
+        assets = DataSource.sharedInstance.photosGroupedByDate
+        println("there are \(assets.last!.count) assets")
+        self.tableView.reloadData()
+    }
+    
+    
+    
+    
+    
 }

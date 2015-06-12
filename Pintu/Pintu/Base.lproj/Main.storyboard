@@ -44,7 +44,13 @@
                             <outlet property="delegate" destination="pFi-xh-ezB" id="rPE-lB-Lvc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dFh-Xi-HL2"/>
+                    <navigationItem key="navigationItem" id="dFh-Xi-HL2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="0Fx-Ld-Ao3">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="pFi-xh-ezB" id="MWK-4d-E51"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdf-ip-O6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,7 +68,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKp-xi-wqT" userLabel="HeaderView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKp-xi-wqT" userLabel="HeaderView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="69"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-cC-0qk">
@@ -92,7 +98,7 @@
                                     <constraint firstItem="5PU-DT-KhI" firstAttribute="centerY" secondItem="fkg-cC-0qk" secondAttribute="centerY" id="jnC-B5-mVX"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="insert comment" translatesAutoresizingMaskIntoConstraints="NO" id="boS-gm-WNd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="insert comment" translatesAutoresizingMaskIntoConstraints="NO" id="boS-gm-WNd">
                                 <rect key="frame" x="15" y="148" width="289" height="150"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
