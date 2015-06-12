@@ -79,6 +79,21 @@ class GroupedTableViewController: UITableViewController {
     }
     
     
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+//        header.contentView.backgroundColor = UIColor(red: 0/255, green: 181/255, blue: 229/255, alpha: 1.0)
+//        header.textLabel.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 16)
+        header.alpha = 0.5 //make the header transparent
+    }
+    
+    
+    
+    
+    
+    
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let dateRangeAssets = self.assets[section]
