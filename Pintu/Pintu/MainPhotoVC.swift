@@ -48,6 +48,13 @@ class MainPhotoVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+        self.commentTextView.becomeFirstResponder()
+        
+        
+        
+        
+        
         //1
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
@@ -103,32 +110,36 @@ class MainPhotoVC: UIViewController {
     // MARK: - Core Data
     func saveComment(comment: String) {
         
-        println("saving comment")
-        //1
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        if comment != "" {
+            println("saving comment")
+            //1
+            let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let managedContext = appDelegate.managedObjectContext!
+            
+            //2
+            let entity =  NSEntityDescription.entityForName("Media",
+                inManagedObjectContext:
+                managedContext)
+            
+            let newMedia = NSManagedObject(entity: entity!,
+                insertIntoManagedObjectContext:managedContext)
+            
+            //3
+            newMedia.setValue(comment, forKey: "comments")
+            newMedia.setValue(self.asset!.localIdentifier, forKey: "assetIdentifier")
+            
+            //4
+            var error: NSError?
+            if !managedContext.save(&error) {
+                println("Could not save \(error), \(error?.userInfo)")
+            }  
+            //5
+            self.media.append(newMedia)
+        }
         
-        let managedContext = appDelegate.managedObjectContext!
         
-        //2
-        let entity =  NSEntityDescription.entityForName("Media",
-            inManagedObjectContext:
-            managedContext)
-        
-        let newMedia = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext:managedContext)
-        
-        //3
-        newMedia.setValue(comment, forKey: "comments")
-        newMedia.setValue(self.asset!.localIdentifier, forKey: "assetIdentifier")
-        
-        //4
-        var error: NSError?
-        if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
-        }  
-        //5
-        self.media.append(newMedia)
     }
 
     
