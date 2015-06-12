@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import CoreData
 
 class DataSource: NSObject {
    
@@ -31,8 +32,14 @@ class DataSource: NSObject {
 
         println("photos: \(photosFetchResult!.count) and videos: \(videosFetchResult!.count)")
         
-        self.photosGroupedByDate = SearchHelper.sharedInstance.groupIntoDays(self.photosFetchResult!)
-//        self.photosGroupedByDate = groupIntoDays(self.photosFetchResult!)
+        let categorizedAssets = categorizedAssetList()
+        self.photosGroupedByDate = SearchHelper.sharedInstance.groupIntoDaysOnlyUncategorized(self.photosFetchResult!, categorizedAssets: categorizedAssets)
+        
+        println("there are \(photosGroupedByDate.count) dates")
+        
+
+        
+        
 
         
     }
@@ -45,10 +52,14 @@ class DataSource: NSObject {
         var currentDateOfFilter = NSDate()
         var currentAssetsGroup = [PHAsset]()
         
+        let categorizedAssets = categorizedAssetList()
+        
         // loop through PHFetchResult to separate into arrays where all dates are the same
 //        if let retrievedPhotosFetchResult = photosFetchResult
-            for index in 0..<fetchResult.count {
-                let value = fetchResult[index] as! PHAsset
+        for index in 0..<fetchResult.count {
+            let value = fetchResult[index] as! PHAsset
+            
+            if !contains(categorizedAssets, value.localIdentifier){
                 if NSDate.areDatesSameDay(currentDateOfFilter, dateTwo: value.creationDate) {
                     currentAssetsGroup.append(value)
                 } else {
@@ -62,10 +73,10 @@ class DataSource: NSObject {
             }
             
             if currentAssetsGroup.count > 0 {
-               assetsGroupedByDate.append(currentAssetsGroup)
+                assetsGroupedByDate.append(currentAssetsGroup)
             }
+        }
         
-     
         println("number of days: \(assetsGroupedByDate.count)")
         
         return assetsGroupedByDate
@@ -109,6 +120,65 @@ class DataSource: NSObject {
     func assetAtIndexPath(section: Int, row: Int) -> PHAsset{
         return self.photosGroupedByDate[section][row]
     }
+    
+    
+    
+    
+    
+    // Mark: - Core Data
+    func categorizedAssetList() -> [String] {
+        
+        println("***** categorized asset list *****")
+        
+        var categorizedAssets = [String]()
+        
+        
+        
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName:"Media")
+
+        fetchRequest.resultType = NSFetchRequestResultType.DictionaryResultType
+        fetchRequest.returnsObjectsAsFaults = false
+        fetchRequest.returnsDistinctResults = true
+        fetchRequest.propertiesToFetch = NSArray(object: "assetIdentifier") as [AnyObject]
+        
+        
+        //3
+        var error: NSError?
+        
+        
+        let uniqueFetchedResultsDictionary = managedContext.executeFetchRequest(fetchRequest, error: nil)
+        println("fetched \(uniqueFetchedResultsDictionary!.count) results")
+        
+        println(uniqueFetchedResultsDictionary!.first)
+        
+        if let results = uniqueFetchedResultsDictionary{
+            var resultsArray: [String] = []
+            for var i = 0; i < results.count; i++ {
+                if let result = (results[i] as? [String : String]){
+                    if let asset = result["assetIdentifier"]{
+                        println(asset)
+                        categorizedAssets.append(asset)
+                    }
+                }
+            }
+        }
+        
+        return categorizedAssets
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

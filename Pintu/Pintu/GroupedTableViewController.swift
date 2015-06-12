@@ -21,6 +21,7 @@ class GroupedTableViewController: UITableViewController {
         if isSearch != true {
             DataSource.sharedInstance.populatePhotos()
             assets = DataSource.sharedInstance.photosGroupedByDate
+            println("there are \(assets.last!.count) assets")
         }
         
         
