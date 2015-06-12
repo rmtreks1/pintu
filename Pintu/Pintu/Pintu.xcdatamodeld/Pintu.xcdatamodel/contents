@@ -3,8 +3,13 @@
     <entity name="Media" syncable="YES">
         <attribute name="assetIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="medias" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" syncable="YES">
+        <relationship name="medias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" inverseName="persons" inverseEntity="Media" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Media" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Media" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Person" positionX="-54" positionY="9" width="128" height="60"/>
     </elements>
 </model>
