@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class MomentsTableViewCell: UITableViewCell {
 
@@ -14,6 +15,7 @@ class MomentsTableViewCell: UITableViewCell {
     @IBOutlet var commentsButton: UIButton!
     @IBOutlet var peopleButton: UIButton!
     var assetIdentifier: String?
+    var asset: PHAsset?
 
     
     override func awakeFromNib() {
@@ -30,6 +32,7 @@ class MomentsTableViewCell: UITableViewCell {
     
     @IBAction func commentsButtonPressed(sender: AnyObject) {
         println("comment button pressed for \(assetIdentifier!)")
+        DataSource.sharedInstance.assetToComment = asset!
     }
     
     

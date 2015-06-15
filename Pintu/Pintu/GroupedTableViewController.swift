@@ -127,6 +127,7 @@ class GroupedTableViewController: UITableViewController {
         
         // set the asset identifier
         cell.assetIdentifier = asset.localIdentifier
+        cell.asset = asset
         
         // get the image
         let manager = PHImageManager.defaultManager()
@@ -234,9 +235,9 @@ class GroupedTableViewController: UITableViewController {
         if segue.identifier == "fullScreen"{
             
             let destinationVC = segue.destinationViewController as! MainPhotoVC
-            let cell = sender as! MomentsTableViewCell
-            let indexPath = self.tableView.indexPathForCell(cell)
-            let asset = DataSource.sharedInstance.assetAtIndexPath(indexPath!.section, row: indexPath!.row) // fix this
+//            let cell = sender as! MomentsTableViewCell
+//            let indexPath = self.tableView.indexPathForCell(cell)
+            let asset = DataSource.sharedInstance.assetToComment // fix this
             
             destinationVC.asset = asset
             

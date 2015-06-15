@@ -18,6 +18,7 @@ class DataSource: NSObject {
     var photosGroupedByDate = [[PHAsset]]()
     var momentsFetchResult: PHFetchResult?
     var photosPermission: Bool?
+    var assetToComment: PHAsset?
 
 
     func populatePhotos(){

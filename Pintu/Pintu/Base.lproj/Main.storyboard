@@ -38,6 +38,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="commentsButtonPressed:" destination="46F-sS-uwj" eventType="touchUpInside" id="0R1-CD-BpK"/>
+                                                        <segue destination="5Cs-zv-Dbb" kind="push" identifier="fullScreen" id="p0u-dp-yjL"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEK-ja-neN">
@@ -78,7 +79,6 @@
                                     <outlet property="commentsButton" destination="XwX-QU-1fR" id="nrx-em-BE4"/>
                                     <outlet property="peopleButton" destination="UEK-ja-neN" id="aIf-mm-3ts"/>
                                     <outlet property="photoImage" destination="GIb-vO-Fdg" id="ZfM-yz-V3c"/>
-                                    <segue destination="5Cs-zv-Dbb" kind="push" identifier="fullScreen" id="nIC-Iw-Jm5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
