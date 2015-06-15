@@ -19,7 +19,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46F-sS-uwj" id="e8h-pF-RzK">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-vO-Fdg">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-vO-Fdg">
                                             <rect key="frame" x="0.0" y="2" width="425" height="425"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="GIb-vO-Fdg" secondAttribute="height" multiplier="1:1" id="y5O-0a-5US"/>
