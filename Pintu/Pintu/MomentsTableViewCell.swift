@@ -13,6 +13,7 @@ class MomentsTableViewCell: UITableViewCell {
     @IBOutlet var photoImage: UIImageView!
     @IBOutlet var commentsButton: UIButton!
     @IBOutlet var peopleButton: UIButton!
+    var assetIdentifier: String?
 
     
     override func awakeFromNib() {
@@ -28,7 +29,7 @@ class MomentsTableViewCell: UITableViewCell {
     
     
     @IBAction func commentsButtonPressed(sender: AnyObject) {
-        println("comment button pressed")
+        println("comment button pressed for \(assetIdentifier!)")
     }
     
     

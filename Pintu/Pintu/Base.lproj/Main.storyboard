@@ -25,11 +25,11 @@
                                                 <constraint firstAttribute="width" secondItem="GIb-vO-Fdg" secondAttribute="height" multiplier="1:1" id="y5O-0a-5US"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JhR-Vu-uQP">
-                                            <rect key="frame" x="0.0" y="300" width="320" height="38"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhR-Vu-uQP">
+                                            <rect key="frame" x="0.0" y="379" width="320" height="48"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwX-QU-1fR">
-                                                    <rect key="frame" x="232" y="1" width="36" height="36"/>
+                                                    <rect key="frame" x="266" y="1" width="46" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="XwX-QU-1fR" secondAttribute="height" multiplier="1:1" id="K3u-eY-L7j"/>
                                                     </constraints>
@@ -41,7 +41,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEK-ja-neN">
-                                                    <rect key="frame" x="276" y="1" width="36" height="36"/>
+                                                    <rect key="frame" x="212" y="1" width="46" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="UEK-ja-neN" secondAttribute="height" multiplier="1:1" id="Vup-uV-qjx"/>
                                                     </constraints>
@@ -54,13 +54,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="UEK-ja-neN" secondAttribute="trailing" constant="8" id="1ta-5w-EgY"/>
                                                 <constraint firstAttribute="bottom" secondItem="XwX-QU-1fR" secondAttribute="bottom" constant="1" id="7YR-Pt-fNG"/>
+                                                <constraint firstAttribute="trailing" secondItem="XwX-QU-1fR" secondAttribute="trailing" constant="8" id="Ygw-fg-ckO"/>
                                                 <constraint firstItem="UEK-ja-neN" firstAttribute="top" secondItem="JhR-Vu-uQP" secondAttribute="top" constant="1" id="a2g-Fo-a2t"/>
-                                                <constraint firstAttribute="height" constant="38" id="hIb-21-FWp"/>
-                                                <constraint firstItem="UEK-ja-neN" firstAttribute="leading" secondItem="XwX-QU-1fR" secondAttribute="trailing" constant="8" id="qqx-G5-hho"/>
+                                                <constraint firstAttribute="height" constant="48" id="hIb-21-FWp"/>
                                                 <constraint firstAttribute="bottom" secondItem="UEK-ja-neN" secondAttribute="bottom" constant="1" id="uuz-MA-2yF"/>
                                                 <constraint firstItem="XwX-QU-1fR" firstAttribute="top" secondItem="JhR-Vu-uQP" secondAttribute="top" constant="1" id="yzS-KO-alS"/>
+                                                <constraint firstItem="XwX-QU-1fR" firstAttribute="leading" secondItem="UEK-ja-neN" secondAttribute="trailing" constant="8" id="zCw-E9-CKp"/>
                                             </constraints>
                                         </view>
                                     </subviews>

@@ -119,9 +119,14 @@ class GroupedTableViewController: UITableViewController {
         // Configure the cell...
         let thumbnail = CGSizeMake(CGFloat(150), CGFloat(150))
         
+        
         // getting the asset
         let dateRangeAssets = self.assets[indexPath.section]
         let asset = dateRangeAssets[indexPath.row] as PHAsset
+        
+        
+        // set the asset identifier
+        cell.assetIdentifier = asset.localIdentifier
         
         // get the image
         let manager = PHImageManager.defaultManager()
