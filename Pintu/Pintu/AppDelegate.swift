@@ -38,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForNotifications()
         
         
+        // register for background app refresh
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        
         return true
     }
 
@@ -85,7 +89,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
-    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        println("fetching")
+        DataSource.sharedInstance.uncategorizedPhotosCount()
+        completionHandler(.NewData)
+    }
     
     
     
