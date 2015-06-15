@@ -33,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        
+        // register for notifications
+        registerForNotifications()
+        
+        
         return true
     }
 
@@ -59,6 +64,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    
+    
+    // MARK: - Notifications
+    
+    func registerForNotifications(){
+        
+        let types = UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge
+        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+//        let settings = UIUserNotificationSettings(forTypes: types, categories: NSSet(object: postCategory) as Set<NSObject>)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     // MARK: - Core Data stack
 

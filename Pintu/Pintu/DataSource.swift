@@ -66,6 +66,11 @@ class DataSource: NSObject {
         
         if let _photosFetchResult = photosFetchResult {
             let uncategorizedCount = _photosFetchResult.count - categorizedAssets.count
+            
+            //
+            UIApplication.sharedApplication().applicationIconBadgeNumber = uncategorizedCount
+//            [UIApplication sharedApplication].applicationIconBadgeNumber = newItemCount;
+            
             return uncategorizedCount
         }
 
