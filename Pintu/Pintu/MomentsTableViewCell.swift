@@ -11,6 +11,8 @@ import UIKit
 class MomentsTableViewCell: UITableViewCell {
 
     @IBOutlet var photoImage: UIImageView!
+    @IBOutlet var commentsButton: UIButton!
+    @IBOutlet var peopleButton: UIButton!
 
     
     override func awakeFromNib() {
@@ -23,5 +25,21 @@ class MomentsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    @IBAction func commentsButtonPressed(sender: AnyObject) {
+        println("comment button pressed")
+    }
+    
+    
+    @IBAction func peopleButtonPressed(sender: AnyObject) {
+        println("people button pressed")
+    }
+    
+    
+    
+    
+    
+    
 
 }
