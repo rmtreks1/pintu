@@ -105,6 +105,13 @@ class MainPhotoVC: UIViewController {
     }
     
     
+    @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
+        self.commentTextView.resignFirstResponder()
+        if let comment = self.commentTextView.text {
+            println(comment)
+            saveComment(comment)
+        }
+    }
     
     
     // MARK: - Core Data
