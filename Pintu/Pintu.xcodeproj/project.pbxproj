@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B553C1B2FA74F00D4E765 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B553B1B2FA74F00D4E765 /* StringExtension.swift */; };
 		0129A7DC1B28809C00DA6BCF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */; };
 		015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449A11B26E72900B1C9A9 /* AppDelegate.swift */; };
 		015449A51B26E72900B1C9A9 /* Pintu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015449A31B26E72900B1C9A9 /* Pintu.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010B553B1B2FA74F00D4E765 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0154499C1B26E72900B1C9A9 /* Pintu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pintu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015449A01B26E72900B1C9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				015449C41B26E74400B1C9A9 /* DateExtension.swift */,
+				010B553B1B2FA74F00D4E765 /* StringExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				0164ECAE1B2E57E600ACBB75 /* SystemHelper.swift in Sources */,
 				01A814DA1B2997940035D443 /* SearchHelper.swift in Sources */,
 				01F2DF3D1B271C09002CEE30 /* MainPhotoVC.swift in Sources */,
+				010B553C1B2FA74F00D4E765 /* StringExtension.swift in Sources */,
 				015449C81B26E92A00B1C9A9 /* DataSource.swift in Sources */,
 				015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */,
 				015449CB1B26E96800B1C9A9 /* MomentsTableViewCell.swift in Sources */,

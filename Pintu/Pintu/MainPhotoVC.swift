@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import CoreData
 
-class MainPhotoVC: UIViewController {
+class MainPhotoVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet var fullScreenMedia: UIImageView!
     var asset: PHAsset?
@@ -20,6 +20,12 @@ class MainPhotoVC: UIViewController {
     @IBOutlet var tapGesturePressed: UITapGestureRecognizer!
     @IBOutlet var commentTextView: UITextView!
     
+    // hashtags
+    var isHashtag: Bool?
+    var tempHashtag: String = ""
+    var hashtags = [String]()
+    let endHashtags = " !@$%^&*()';/?.,<>"
+    
     // core data
     var media = [NSManagedObject]()
     
@@ -28,7 +34,7 @@ class MainPhotoVC: UIViewController {
         
         
         // set the location
-        
+        commentTextView.delegate = self
         
         
         
@@ -161,8 +167,43 @@ class MainPhotoVC: UIViewController {
     }
     
     
+    // MARK: - TextView Delegate
+    func textViewDidChange(textView: UITextView) {
+        let userText = textView.text
+        println(userText)
+        
+        // get the last character
+        let index = userText.endIndex.predecessor()
+        let lastChar = userText[index]
+        println(lastChar)
+        
+        if lastChar == "#" {
+            println("start of hashtag")
+            tempHashtag = ""
+            isHashtag = true
+        }
+        
+        if let _isHashtag = isHashtag {
+            if _isHashtag {
+                if contains(endHashtags, lastChar) {
+                    println("end of hashtag ...... \(tempHashtag)")
+                    hashtags.append(tempHashtag)
+                    isHashtag = false
+                } else {
+                    tempHashtag.append(lastChar)
+                }
+            }
+
+        }
+        
+        
+    }
     
     
+//    func textViewDidBeginEditing(textView: UITextView) {
+//        let userText = textView.text
+//        println(userText)
+//    }
     
     
     /*
