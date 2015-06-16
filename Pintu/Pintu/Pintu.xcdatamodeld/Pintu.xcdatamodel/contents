@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Hashtags" syncable="YES">
+        <attribute name="hashtag" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="medias" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Media" inverseName="hashtag" inverseEntity="Media" syncable="YES"/>
+    </entity>
     <entity name="Media" syncable="YES">
         <attribute name="assetIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hashtag" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hashtags" inverseName="medias" inverseEntity="Hashtags" syncable="YES"/>
         <relationship name="persons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="medias" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" syncable="YES">
         <relationship name="medias" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" inverseName="persons" inverseEntity="Media" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Media" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Media" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="Person" positionX="-54" positionY="9" width="128" height="60"/>
+        <element name="Hashtags" positionX="-45" positionY="18" width="128" height="75"/>
     </elements>
 </model>
