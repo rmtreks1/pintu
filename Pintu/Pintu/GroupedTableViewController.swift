@@ -21,7 +21,7 @@ class GroupedTableViewController: UITableViewController {
         if isSearch != true {
             DataSource.sharedInstance.populatePhotos()
             assets = DataSource.sharedInstance.photosGroupedByDate
-            println("there are \(assets.last!.count) assets")
+//            println("there are \(assets.last!.count) assets")
         } else {
             self.navigationItem.rightBarButtonItem = nil
 //            self.navigationController?.navigationItem.rightBarButtonItem

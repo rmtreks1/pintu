@@ -22,6 +22,7 @@
 		015449CE1B26E9C600B1C9A9 /* GroupedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449CD1B26E9C600B1C9A9 /* GroupedTableViewController.swift */; };
 		0164ECAE1B2E57E600ACBB75 /* SystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164ECAD1B2E57E600ACBB75 /* SystemHelper.swift */; };
 		01A814DA1B2997940035D443 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A814D91B2997940035D443 /* SearchHelper.swift */; };
+		01B2212C1B30FF3A00263652 /* HashtagHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2212B1B30FF3A00263652 /* HashtagHelper.swift */; };
 		01F2DF3D1B271C09002CEE30 /* MainPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		015449CD1B26E9C600B1C9A9 /* GroupedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedTableViewController.swift; sourceTree = "<group>"; };
 		0164ECAD1B2E57E600ACBB75 /* SystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemHelper.swift; sourceTree = "<group>"; };
 		01A814D91B2997940035D443 /* SearchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
+		01B2212B1B30FF3A00263652 /* HashtagHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagHelper.swift; sourceTree = "<group>"; };
 		01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPhotoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 			children = (
 				01A814D91B2997940035D443 /* SearchHelper.swift */,
 				0164ECAD1B2E57E600ACBB75 /* SystemHelper.swift */,
+				01B2212B1B30FF3A00263652 /* HashtagHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B2212C1B30FF3A00263652 /* HashtagHelper.swift in Sources */,
 				0129A7DC1B28809C00DA6BCF /* SearchViewController.swift in Sources */,
 				015449CE1B26E9C600B1C9A9 /* GroupedTableViewController.swift in Sources */,
 				015449A71B26E72900B1C9A9 /* ViewController.swift in Sources */,

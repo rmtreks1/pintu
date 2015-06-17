@@ -123,6 +123,14 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
     // MARK: - Core Data
     func saveComment(comment: String) {
         
+        
+        // delete this code - for testing only
+
+
+        
+        
+        
+        
         if comment != "" {
             println("saving comment")
             
@@ -137,7 +145,7 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
             
             //0.1 Hashtags
             println("there are \(hashtags.count)")
-            
+            HashtagHelper.sharedInstance.saveHashTags(self.hashtags)
             
             
             
