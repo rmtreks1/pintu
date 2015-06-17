@@ -125,6 +125,22 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
         
         if comment != "" {
             println("saving comment")
+            
+            //0 Hashtag - incase user did not put a space or anything else after the hashtag
+            if let _isHashtag = isHashtag {
+                if _isHashtag {
+                    println("end of hashtag ...... \(tempHashtag)")
+                    hashtags.append(tempHashtag)
+                    isHashtag = false
+                }
+            }
+            
+            //0.1 Hashtags
+            println("there are \(hashtags.count)")
+            
+            
+            
+            
             //1
             let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
