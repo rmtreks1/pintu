@@ -197,37 +197,35 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
         println(userText)
         
         // get the last character
-        let index = userText.endIndex.predecessor()
-        let lastChar = userText[index]
-        println(lastChar)
-        
-        if lastChar == "#" {
-            println("start of hashtag")
-            tempHashtag = ""
-            isHashtag = true
-        }
-        
-        if let _isHashtag = isHashtag {
-            if _isHashtag {
-                if contains(endHashtags, lastChar) {
-                    println("end of hashtag ...... \(tempHashtag)")
-                    hashtags.append(tempHashtag)
-                    isHashtag = false
-                } else {
-                    tempHashtag.append(lastChar)
-                }
+        if count(userText) > 0 {
+           
+            let index = userText.endIndex.predecessor()
+            let lastChar = userText[index]
+            println(lastChar)
+            
+            if lastChar == "#" {
+                println("start of hashtag")
+                tempHashtag = ""
+                isHashtag = true
             }
-
+            
+            if let _isHashtag = isHashtag {
+                if _isHashtag {
+                    if contains(endHashtags, lastChar) {
+                        println("end of hashtag ...... \(tempHashtag)")
+                        hashtags.append(tempHashtag)
+                        isHashtag = false
+                    } else {
+                        tempHashtag.append(lastChar)
+                    }
+                }
+                
+            } 
         }
+        
         
         
     }
-    
-    
-//    func textViewDidBeginEditing(textView: UITextView) {
-//        let userText = textView.text
-//        println(userText)
-//    }
     
     
     /*
