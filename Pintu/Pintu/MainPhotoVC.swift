@@ -84,7 +84,9 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
         if let results = fetchedResults {
             self.media = results
             println("found \(results.count) saved comments")
-            commentForAsset(self.asset!)
+            if let existingComment = commentForAsset(self.asset!) {
+                self.commentTextView.text = existingComment
+            }
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
@@ -180,14 +182,17 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
     }
 
     
-    func commentForAsset(asset: PHAsset) {
+    func commentForAsset(asset: PHAsset) -> String?{
         for media in self.media {
             let mediaIdentifier = media.valueForKey("assetIdentifier") as! String
             if mediaIdentifier == asset.localIdentifier {
                 let comment = media.valueForKey("comments") as! String
                 println(comment)
+                return comment
             }
         }
+        
+        return nil
     }
     
     
@@ -220,7 +225,7 @@ class MainPhotoVC: UIViewController, UITextViewDelegate {
                     }
                 }
                 
-            } 
+            }
         }
         
         
