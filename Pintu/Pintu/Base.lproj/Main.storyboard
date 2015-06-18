@@ -98,7 +98,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdf-ip-O6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="356"/>
+            <point key="canvasLocation" x="1493" y="356"/>
         </scene>
         <!--Main PhotoVC-->
         <scene sceneID="PUE-gL-UMy">
@@ -112,14 +112,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-cC-0qk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-cC-0qk">
                                 <rect key="frame" x="0.0" y="64" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Neg-V4-bie"/>
                                     <constraint firstAttribute="width" constant="70" id="wbD-dm-K25"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insert Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evb-mh-pxh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Insert Comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evb-mh-pxh">
                                 <rect key="frame" x="16" y="142" width="224" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1ZL-ut-B36"/>
@@ -129,7 +129,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boS-gm-WNd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="boS-gm-WNd">
                                 <rect key="frame" x="16" y="171" width="288" height="90"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -173,7 +173,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1476" y="356"/>
+            <point key="canvasLocation" x="1870" y="342"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="cog-b0-Pgo">
@@ -345,12 +345,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pFi-xh-ezB" kind="relationship" relationship="rootViewController" id="KJd-AN-8Tc"/>
+                        <segue destination="xt4-sQ-ALJ" kind="relationship" relationship="rootViewController" id="RiW-5U-IJw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYj-ro-YXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632.5333333333333" y="356.89333333333332"/>
+            <point key="canvasLocation" x="664" y="356"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Fqu-un-iXN">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="xt4-sQ-ALJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="u0U-hb-vWR"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tel-WV-kU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mJG-5T-hkP">
@@ -384,7 +394,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="e4k-G1-ElG"/>
-    </inferredMetricsTieBreakers>
 </document>
