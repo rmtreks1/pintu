@@ -29,7 +29,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="406" id="hOc-ze-xBU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="430" id="hOc-ze-xBU">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hOc-ze-xBU" id="CLr-MH-pL7">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -44,6 +44,15 @@
                                                 <constraint firstAttribute="width" secondItem="ZDh-9W-SfB" secondAttribute="height" multiplier="1:1" id="6uq-sG-pGT"/>
                                             </constraints>
                                         </scrollView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJu-6u-xeN">
+                                            <rect key="frame" x="36" y="322" width="276" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Jzs-qg-Ei0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="near_me-32" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-oX-28c">
                                             <rect key="frame" x="8" y="323" width="20" height="20"/>
                                             <constraints>
@@ -51,24 +60,34 @@
                                                 <constraint firstAttribute="width" constant="20" id="bXO-lA-uhm"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJu-6u-xeN">
-                                            <rect key="frame" x="36" y="322" width="276" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6F-Me-Axa">
+                                            <rect key="frame" x="8" y="351" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Jzs-qg-Ei0"/>
+                                                <constraint firstAttribute="width" constant="35" id="hav-2S-pdd"/>
+                                                <constraint firstAttribute="height" constant="35" id="ns0-Jp-nEa"/>
                                             </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="comment" translatesAutoresizingMaskIntoConstraints="NO" id="6Ok-l4-3HN">
+                                            <rect key="frame" x="51" y="351" width="261" height="72"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="qJu-6u-xeN" secondAttribute="trailing" id="2k4-dM-roO"/>
                                         <constraint firstAttribute="trailing" secondItem="ZDh-9W-SfB" secondAttribute="trailing" id="3nF-Bx-7QT"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="top" secondItem="CLr-MH-pL7" secondAttribute="top" id="7m5-3X-t7X"/>
+                                        <constraint firstItem="6Ok-l4-3HN" firstAttribute="top" secondItem="qJu-6u-xeN" secondAttribute="bottom" constant="8" id="LtR-Ma-O4z"/>
                                         <constraint firstItem="qJu-6u-xeN" firstAttribute="leading" secondItem="Dqg-oX-28c" secondAttribute="trailing" constant="8" id="P38-iR-eh8"/>
                                         <constraint firstItem="Dqg-oX-28c" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="3" id="PWN-6U-4XJ"/>
+                                        <constraint firstItem="S6F-Me-Axa" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leadingMargin" id="PtM-tk-jqD"/>
+                                        <constraint firstItem="S6F-Me-Axa" firstAttribute="top" secondItem="Dqg-oX-28c" secondAttribute="bottom" constant="8" id="QF1-Kb-S1F"/>
                                         <constraint firstItem="Dqg-oX-28c" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leadingMargin" id="agf-Jb-VWu"/>
+                                        <constraint firstItem="6Ok-l4-3HN" firstAttribute="bottom" secondItem="CLr-MH-pL7" secondAttribute="bottomMargin" constant="2" id="cca-cw-ayQ"/>
+                                        <constraint firstItem="6Ok-l4-3HN" firstAttribute="trailing" secondItem="CLr-MH-pL7" secondAttribute="trailingMargin" id="oeJ-NG-Ktb"/>
                                         <constraint firstItem="qJu-6u-xeN" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="2" id="w0K-D4-YTq"/>
+                                        <constraint firstItem="6Ok-l4-3HN" firstAttribute="leading" secondItem="S6F-Me-Axa" secondAttribute="trailing" constant="8" id="xDI-8m-cOO"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leading" id="xOW-R3-P2m"/>
                                     </constraints>
                                 </tableViewCellContentView>
