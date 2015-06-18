@@ -20,9 +20,15 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmE-nY-tNe" id="0Ba-E4-5Zc">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-mI-NW2">
-                                            <rect key="frame" x="8" y="8" width="147" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-mI-NW2">
+                                            <rect key="frame" x="8" y="8" width="115" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thu, 15 Nov 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEr-TN-NcN">
+                                            <rect key="frame" x="138" y="8" width="174" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -44,8 +50,8 @@
                                                 <constraint firstAttribute="width" secondItem="ZDh-9W-SfB" secondAttribute="height" multiplier="1:1" id="6uq-sG-pGT"/>
                                             </constraints>
                                         </scrollView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJu-6u-xeN">
-                                            <rect key="frame" x="36" y="322" width="276" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJu-6u-xeN">
+                                            <rect key="frame" x="36" y="322" width="229" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Jzs-qg-Ei0"/>
                                             </constraints>
@@ -54,14 +60,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="near_me-32" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-oX-28c">
-                                            <rect key="frame" x="8" y="323" width="20" height="20"/>
+                                            <rect key="frame" x="8" y="323" width="25" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="ZXb-kU-8Bt"/>
-                                                <constraint firstAttribute="width" constant="20" id="bXO-lA-uhm"/>
+                                                <constraint firstAttribute="height" constant="25" id="ZXb-kU-8Bt"/>
+                                                <constraint firstAttribute="width" constant="25" id="bXO-lA-uhm"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S6F-Me-Axa">
-                                            <rect key="frame" x="8" y="351" width="35" height="35"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Batman" translatesAutoresizingMaskIntoConstraints="NO" id="S6F-Me-Axa">
+                                            <rect key="frame" x="8" y="356" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="hav-2S-pdd"/>
                                                 <constraint firstAttribute="height" constant="35" id="ns0-Jp-nEa"/>
@@ -73,11 +79,22 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5e-fT-Q4G">
+                                            <rect key="frame" x="292" y="323" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="11B-j5-k65"/>
+                                                <constraint firstAttribute="width" constant="20" id="UND-ZM-bMR"/>
+                                            </constraints>
+                                            <state key="normal" image="heart-empty">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="qJu-6u-xeN" secondAttribute="trailing" id="2k4-dM-roO"/>
                                         <constraint firstAttribute="trailing" secondItem="ZDh-9W-SfB" secondAttribute="trailing" id="3nF-Bx-7QT"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="top" secondItem="CLr-MH-pL7" secondAttribute="top" id="7m5-3X-t7X"/>
+                                        <constraint firstItem="g5e-fT-Q4G" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="3" id="KJl-FP-Wcb"/>
                                         <constraint firstItem="6Ok-l4-3HN" firstAttribute="top" secondItem="qJu-6u-xeN" secondAttribute="bottom" constant="8" id="LtR-Ma-O4z"/>
                                         <constraint firstItem="qJu-6u-xeN" firstAttribute="leading" secondItem="Dqg-oX-28c" secondAttribute="trailing" constant="8" id="P38-iR-eh8"/>
                                         <constraint firstItem="Dqg-oX-28c" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="3" id="PWN-6U-4XJ"/>
@@ -89,6 +106,7 @@
                                         <constraint firstItem="qJu-6u-xeN" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="2" id="w0K-D4-YTq"/>
                                         <constraint firstItem="6Ok-l4-3HN" firstAttribute="leading" secondItem="S6F-Me-Axa" secondAttribute="trailing" constant="8" id="xDI-8m-cOO"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leading" id="xOW-R3-P2m"/>
+                                        <constraint firstItem="g5e-fT-Q4G" firstAttribute="trailing" secondItem="CLr-MH-pL7" secondAttribute="trailingMargin" id="zNC-zk-9yM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -464,9 +482,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Batman" width="690" height="800"/>
         <image name="comment-empty" width="24" height="24"/>
         <image name="community" width="32" height="32"/>
         <image name="group-empty" width="24" height="24"/>
+        <image name="heart-empty" width="28" height="27"/>
         <image name="myTrip" width="32" height="32"/>
         <image name="near_me-32" width="32" height="32"/>
         <image name="profile" width="32" height="32"/>
