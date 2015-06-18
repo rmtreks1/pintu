@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Item-->
         <scene sceneID="bc4-Nw-BU4">
             <objects>
                 <tableViewController id="dje-F9-r08" sceneMemberID="viewController">
@@ -37,16 +37,38 @@
                                         <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="II8-Bh-ovl">
                                             <rect key="frame" x="141" y="96" width="39" height="37"/>
                                         </pageControl>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" indicatorStyle="white" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-9W-SfB">
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-9W-SfB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ZDh-9W-SfB" secondAttribute="height" multiplier="1:1" id="6uq-sG-pGT"/>
                                             </constraints>
                                         </scrollView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="near_me-32" translatesAutoresizingMaskIntoConstraints="NO" id="Dqg-oX-28c">
+                                            <rect key="frame" x="8" y="323" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="ZXb-kU-8Bt"/>
+                                                <constraint firstAttribute="width" constant="20" id="bXO-lA-uhm"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJu-6u-xeN">
+                                            <rect key="frame" x="36" y="322" width="276" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Jzs-qg-Ei0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qJu-6u-xeN" secondAttribute="trailing" id="2k4-dM-roO"/>
                                         <constraint firstAttribute="trailing" secondItem="ZDh-9W-SfB" secondAttribute="trailing" id="3nF-Bx-7QT"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="top" secondItem="CLr-MH-pL7" secondAttribute="top" id="7m5-3X-t7X"/>
+                                        <constraint firstItem="qJu-6u-xeN" firstAttribute="leading" secondItem="Dqg-oX-28c" secondAttribute="trailing" constant="8" id="P38-iR-eh8"/>
+                                        <constraint firstItem="Dqg-oX-28c" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="3" id="PWN-6U-4XJ"/>
+                                        <constraint firstItem="Dqg-oX-28c" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leadingMargin" id="agf-Jb-VWu"/>
+                                        <constraint firstItem="qJu-6u-xeN" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="2" id="w0K-D4-YTq"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leading" id="xOW-R3-P2m"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -57,6 +79,7 @@
                             <outlet property="delegate" destination="dje-F9-r08" id="tIz-9d-Xha"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="x7K-Tl-q5a"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0u-Qd-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,6 +368,7 @@
                         <segue destination="0ue-hl-uI5" kind="relationship" relationship="viewControllers" id="ihp-hU-IUe"/>
                         <segue destination="Cr8-iG-q5W" kind="relationship" relationship="viewControllers" id="Q5K-Ug-UV3"/>
                         <segue destination="grO-z6-Ery" kind="relationship" relationship="viewControllers" id="yb7-n3-YOc"/>
+                        <segue destination="dje-F9-r08" kind="relationship" relationship="viewControllers" id="aYJ-Jp-R3h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMN-rm-u0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -425,6 +449,7 @@
         <image name="community" width="32" height="32"/>
         <image name="group-empty" width="24" height="24"/>
         <image name="myTrip" width="32" height="32"/>
+        <image name="near_me-32" width="32" height="32"/>
         <image name="profile" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
