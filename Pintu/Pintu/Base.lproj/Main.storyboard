@@ -232,7 +232,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="574" y="1108"/>
+            <point key="canvasLocation" x="1065" y="1080"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B5E-R6-4ze">
@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qot-Mp-tnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="-292"/>
+            <point key="canvasLocation" x="632" y="-370"/>
         </scene>
         <!--Profile-->
         <scene sceneID="6g6-gm-DVO">
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JM-X3-V8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="-292"/>
+            <point key="canvasLocation" x="632" y="-1080"/>
         </scene>
         <!--My Trip-->
         <scene sceneID="el1-pf-cGN">
@@ -369,7 +369,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ri-he-eeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184" y="1108"/>
+            <point key="canvasLocation" x="632" y="1096"/>
         </scene>
     </scenes>
     <resources>
@@ -385,6 +385,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KJd-AN-8Tc"/>
+        <segue reference="e4k-G1-ElG"/>
     </inferredMetricsTieBreakers>
 </document>
