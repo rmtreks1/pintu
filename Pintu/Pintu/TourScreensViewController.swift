@@ -47,15 +47,41 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
             pageViews.append(nil)
         }
         
+//        // 4
+//        let pagesScrollViewSize = scrollView.frame.size
+//        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
+//            height: pagesScrollViewSize.height)
+//        
+//        println("view did load scroll view width is... \(scrollView.frame.size.width)")
+//
+//        //        self.pageWidth = scrollView.frame.size.width
+////        self.pageHeight = scrollView.frame.size.height
+//        
+//        
+//        // 4.1 Content Offset
+//        
+//        
+//        
+//        
+//        
+//        
+//        // 5
+//        loadVisiblePages()
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         // 4
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
             height: pagesScrollViewSize.height)
         
         println("view did load scroll view width is... \(scrollView.frame.size.width)")
-
+        
         //        self.pageWidth = scrollView.frame.size.width
-//        self.pageHeight = scrollView.frame.size.height
+        //        self.pageHeight = scrollView.frame.size.height
         
         
         // 4.1 Content Offset
@@ -67,7 +93,9 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
         
         // 5
         loadVisiblePages()
+        
     }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -107,12 +135,14 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
             frame.origin.x = frame.size.width * CGFloat(page)
             frame.origin.y = 0.0
             
+            println("frame origin x is \(frame.origin.x)")
+            
             println(frame.size.width)
             println("scroll view width is... \(scrollView.frame.size.width)")
             
             // 3
             let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFill
+            newPageView.contentMode = .ScaleAspectFit
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
             
@@ -141,6 +171,10 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
         // First, determine which page is currently visible
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
+        
+        // testing
+        println("loadVisiblePages - page width = \(pageWidth)")
+        
         
         // Update the page control
         pageControl.currentPage = page
