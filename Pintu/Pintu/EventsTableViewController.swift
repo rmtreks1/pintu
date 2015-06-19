@@ -44,7 +44,8 @@ class EventsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("momentsCell", forIndexPath: indexPath) as! MomentTableViewCell
 
         // Configure the cell...
-        cell.setupTheScrollView()
+        let cellWidth = self.tableView.frame.size.width
+        cell.setupTheScrollView(cellWidth)
 
         return cell
     }

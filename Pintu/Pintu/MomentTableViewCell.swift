@@ -34,8 +34,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     
-    
-    func setupTheScrollView(){
+    func setupTheScrollView(width: CGFloat){
         
         self.scrollView.delegate = self
         
@@ -57,6 +56,8 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         }
         
         // 4
+        scrollView.frame.size = CGSize(width: width, height: width)
+        
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
             height: pagesScrollViewSize.height)
@@ -108,6 +109,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
             let newPageView = UIImageView(image: pageImages[page])
             newPageView.contentMode = .ScaleAspectFill
             newPageView.frame = frame
+            newPageView.clipsToBounds = true
             scrollView.addSubview(newPageView)
             
             // 4
