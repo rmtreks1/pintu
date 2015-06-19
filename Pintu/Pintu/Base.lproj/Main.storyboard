@@ -232,7 +232,7 @@ xxxxx</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdf-ip-O6B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="342"/>
+            <point key="canvasLocation" x="2058" y="342"/>
         </scene>
         <!--Main PhotoVC-->
         <scene sceneID="PUE-gL-UMy">
@@ -307,7 +307,7 @@ xxxxx</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1870" y="342"/>
+            <point key="canvasLocation" x="2402" y="342"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="cog-b0-Pgo">
@@ -440,16 +440,57 @@ xxxxx</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xt4-sQ-ALJ" kind="relationship" relationship="viewControllers" id="xx2-mp-bXL"/>
                         <segue destination="0ue-hl-uI5" kind="relationship" relationship="viewControllers" id="ihp-hU-IUe"/>
                         <segue destination="Cr8-iG-q5W" kind="relationship" relationship="viewControllers" id="Q5K-Ug-UV3"/>
                         <segue destination="grO-z6-Ery" kind="relationship" relationship="viewControllers" id="yb7-n3-YOc"/>
                         <segue destination="wJD-Yi-NXe" kind="relationship" relationship="viewControllers" id="aYJ-Jp-R3h"/>
+                        <segue destination="n9S-rj-K3i" kind="relationship" relationship="viewControllers" id="J7O-WJ-nF8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMN-rm-u0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224" y="356.89333333333332"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M8L-lW-EkC">
+            <objects>
+                <viewController id="5ZS-5C-aBC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lDs-dO-Try"/>
+                        <viewControllerLayoutGuide type="bottom" id="7vK-Fj-1VG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oJo-Vh-YZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-oR-d9D">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="g2l-GZ-xO7">
+                                <rect key="frame" x="46" y="474" width="228" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="cKE-Nk-Utc"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Dc8-oR-d9D" secondAttribute="bottom" id="0Iu-hJ-QmE"/>
+                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="leading" secondItem="oJo-Vh-YZ7" secondAttribute="leading" id="3wo-zt-fkA"/>
+                            <constraint firstItem="g2l-GZ-xO7" firstAttribute="leading" secondItem="oJo-Vh-YZ7" secondAttribute="leadingMargin" constant="30" id="5jQ-dF-n4P"/>
+                            <constraint firstAttribute="trailing" secondItem="Dc8-oR-d9D" secondAttribute="trailing" id="HQc-cn-alP"/>
+                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="top" secondItem="lDs-dO-Try" secondAttribute="bottom" id="INM-mv-Dux"/>
+                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="width" secondItem="oJo-Vh-YZ7" secondAttribute="width" id="Ion-kY-bkr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2l-GZ-xO7" secondAttribute="trailing" constant="30" id="Zgh-Si-aep"/>
+                            <constraint firstItem="7vK-Fj-1VG" firstAttribute="top" secondItem="g2l-GZ-xO7" secondAttribute="bottom" constant="8" id="wKD-T6-9CX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z8B-Hg-dOa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khO-aD-98m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597" y="356"/>
         </scene>
         <!--community-->
         <scene sceneID="jfW-a6-QGT">
@@ -489,17 +530,6 @@ xxxxx</string>
             </objects>
             <point key="canvasLocation" x="632" y="-1080"/>
         </scene>
-        <!--My Trip-->
-        <scene sceneID="Fqu-un-iXN">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="xt4-sQ-ALJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Trip" image="myTrip" id="Uxm-aD-GzS"/>
-                    <navigationItem key="navigationItem" id="u0U-hb-vWR"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tel-WV-kU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="735" y="356"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mJG-5T-hkP">
             <objects>
@@ -537,6 +567,25 @@ xxxxx</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOd-mO-Xar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="-295"/>
+        </scene>
+        <!--my Moments-->
+        <scene sceneID="DmX-sZ-4VN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n9S-rj-K3i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="my Moments" image="myTrip" id="7mQ-9w-w9L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g2y-Uw-WEw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5ZS-5C-aBC" kind="relationship" relationship="rootViewController" id="R8V-fx-YoI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9j5-zC-gYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="356"/>
         </scene>
     </scenes>
     <resources>
