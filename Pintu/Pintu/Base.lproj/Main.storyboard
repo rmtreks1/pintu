@@ -402,6 +402,7 @@
                             <constraint firstAttribute="centerX" secondItem="Dnf-5u-Nom" secondAttribute="centerX" id="NKc-2c-wGT"/>
                             <constraint firstAttribute="trailing" secondItem="3ab-e3-5I6" secondAttribute="trailing" id="WIE-me-D0W"/>
                             <constraint firstItem="3ab-e3-5I6" firstAttribute="leading" secondItem="E2Z-sK-IR7" secondAttribute="leading" id="Xab-TO-NQR"/>
+                            <constraint firstAttribute="width" secondItem="3ab-e3-5I6" secondAttribute="width" id="ZY2-h9-HRE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QSr-nJ-R4Z" secondAttribute="trailing" constant="30" id="Zz8-Vl-XAJ"/>
                             <constraint firstItem="G7F-ga-UDh" firstAttribute="top" secondItem="Dnf-5u-Nom" secondAttribute="bottom" constant="8" id="gfc-r6-DqS"/>
                             <constraint firstItem="Dnf-5u-Nom" firstAttribute="top" secondItem="3ab-e3-5I6" secondAttribute="bottom" constant="20" id="woN-5R-euk"/>

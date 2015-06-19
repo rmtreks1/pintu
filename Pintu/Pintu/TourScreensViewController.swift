@@ -17,7 +17,8 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
     
-    
+    var pageWidth: CGFloat?
+    var pageHeight: CGFloat?
     
     
 
@@ -50,6 +51,19 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
             height: pagesScrollViewSize.height)
+        
+        println("view did load scroll view width is... \(scrollView.frame.size.width)")
+
+        //        self.pageWidth = scrollView.frame.size.width
+//        self.pageHeight = scrollView.frame.size.height
+        
+        
+        // 4.1 Content Offset
+        
+        
+        
+        
+        
         
         // 5
         loadVisiblePages()
@@ -92,6 +106,9 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
             var frame = scrollView.bounds
             frame.origin.x = frame.size.width * CGFloat(page)
             frame.origin.y = 0.0
+            
+            println(frame.size.width)
+            println("scroll view width is... \(scrollView.frame.size.width)")
             
             // 3
             let newPageView = UIImageView(image: pageImages[page])
