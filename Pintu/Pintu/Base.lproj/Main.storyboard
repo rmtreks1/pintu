@@ -132,7 +132,9 @@ xxxxx</string>
                             <outlet property="delegate" destination="dje-F9-r08" id="tIz-9d-Xha"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eOw-Nr-5L3"/>
+                    <navigationItem key="navigationItem" id="eOw-Nr-5L3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKR-rc-Hdi"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0u-Qd-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
