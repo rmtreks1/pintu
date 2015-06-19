@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		010B553C1B2FA74F00D4E765 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B553B1B2FA74F00D4E765 /* StringExtension.swift */; };
+		011607291B33C91F00403EA3 /* TourScreensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011607281B33C91F00403EA3 /* TourScreensViewController.swift */; };
+		0116072E1B33CB6200403EA3 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0116072A1B33CB6200403EA3 /* 1.jpg */; };
+		0116072F1B33CB6200403EA3 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0116072B1B33CB6200403EA3 /* 2.jpg */; };
+		011607301B33CB6200403EA3 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0116072C1B33CB6200403EA3 /* 3.jpg */; };
+		011607311B33CB6200403EA3 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0116072D1B33CB6200403EA3 /* 4.jpg */; };
 		0129A7DC1B28809C00DA6BCF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */; };
 		015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449A11B26E72900B1C9A9 /* AppDelegate.swift */; };
 		015449A51B26E72900B1C9A9 /* Pintu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015449A31B26E72900B1C9A9 /* Pintu.xcdatamodeld */; };
@@ -38,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		010B553B1B2FA74F00D4E765 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		011607281B33C91F00403EA3 /* TourScreensViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourScreensViewController.swift; sourceTree = "<group>"; };
+		0116072A1B33CB6200403EA3 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		0116072B1B33CB6200403EA3 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		0116072C1B33CB6200403EA3 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		0116072D1B33CB6200403EA3 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0154499C1B26E72900B1C9A9 /* Pintu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pintu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		015449A01B26E72900B1C9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,9 +88,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011607321B33CB7000403EA3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0116072A1B33CB6200403EA3 /* 1.jpg */,
+				0116072B1B33CB6200403EA3 /* 2.jpg */,
+				0116072C1B33CB6200403EA3 /* 3.jpg */,
+				0116072D1B33CB6200403EA3 /* 4.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		015449931B26E72900B1C9A9 = {
 			isa = PBXGroup;
 			children = (
+				011607321B33CB7000403EA3 /* Images */,
 				015449C61B26E74E00B1C9A9 /* Extensions */,
 				0154499E1B26E72900B1C9A9 /* Pintu */,
 				015449B71B26E72900B1C9A9 /* PintuTests */,
@@ -171,6 +193,7 @@
 				01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */,
 				015449A61B26E72900B1C9A9 /* ViewController.swift */,
 				0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */,
+				011607281B33C91F00403EA3 /* TourScreensViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,6 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				015449AA1B26E72900B1C9A9 /* Main.storyboard in Resources */,
+				011607311B33CB6200403EA3 /* 4.jpg in Resources */,
+				0116072E1B33CB6200403EA3 /* 1.jpg in Resources */,
+				0116072F1B33CB6200403EA3 /* 2.jpg in Resources */,
+				011607301B33CB6200403EA3 /* 3.jpg in Resources */,
 				015449AF1B26E72900B1C9A9 /* LaunchScreen.xib in Resources */,
 				015449AC1B26E72900B1C9A9 /* Images.xcassets in Resources */,
 			);
@@ -302,6 +329,7 @@
 				010B553C1B2FA74F00D4E765 /* StringExtension.swift in Sources */,
 				015449C81B26E92A00B1C9A9 /* DataSource.swift in Sources */,
 				015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */,
+				011607291B33C91F00403EA3 /* TourScreensViewController.swift in Sources */,
 				015449CB1B26E96800B1C9A9 /* MomentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

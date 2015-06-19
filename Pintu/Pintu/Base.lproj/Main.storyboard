@@ -357,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="1065" y="1080"/>
         </scene>
-        <!--View Controller-->
+        <!--Tour Screens View Controller-->
         <scene sceneID="B5E-R6-4ze">
             <objects>
-                <viewController id="KNl-0i-aEv" customClass="ViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KNl-0i-aEv" customClass="TourScreensViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y5Y-vs-sWg"/>
                         <viewControllerLayoutGuide type="bottom" id="G7F-ga-UDh"/>
@@ -369,7 +369,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-e3-5I6">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-e3-5I6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QSr-nJ-R4Z">
@@ -409,6 +409,10 @@
                             <constraint firstItem="Dnf-5u-Nom" firstAttribute="top" secondItem="3ab-e3-5I6" secondAttribute="bottom" constant="20" id="woN-5R-euk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="QSr-nJ-R4Z" id="xsU-YN-Hpz"/>
+                        <outlet property="scrollView" destination="3ab-e3-5I6" id="ZBt-Fk-9qb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y02-ou-z0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
