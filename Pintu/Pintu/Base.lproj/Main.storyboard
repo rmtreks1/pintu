@@ -147,6 +147,7 @@ xxxxx</string>
                                         <constraint firstItem="S6F-Me-Axa" firstAttribute="top" secondItem="Dqg-oX-28c" secondAttribute="bottom" constant="8" id="QF1-Kb-S1F"/>
                                         <constraint firstItem="Dqg-oX-28c" firstAttribute="leading" secondItem="CLr-MH-pL7" secondAttribute="leadingMargin" id="agf-Jb-VWu"/>
                                         <constraint firstItem="6Ok-l4-3HN" firstAttribute="bottom" secondItem="CLr-MH-pL7" secondAttribute="bottomMargin" constant="2" id="cca-cw-ayQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="S6F-Me-Axa" secondAttribute="bottom" constant="30" id="iiP-3Q-Nym"/>
                                         <constraint firstItem="6Ok-l4-3HN" firstAttribute="trailing" secondItem="CLr-MH-pL7" secondAttribute="trailingMargin" id="oeJ-NG-Ktb"/>
                                         <constraint firstItem="ZDh-9W-SfB" firstAttribute="bottom" secondItem="ANe-Pg-iuN" secondAttribute="bottom" constant="15" id="qgM-7k-HHZ"/>
                                         <constraint firstItem="qJu-6u-xeN" firstAttribute="top" secondItem="ZDh-9W-SfB" secondAttribute="bottom" constant="2" id="w0K-D4-YTq"/>
