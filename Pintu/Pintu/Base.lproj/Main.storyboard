@@ -15,25 +15,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="38" id="kmE-nY-tNe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="38" id="kmE-nY-tNe" customClass="MomentHeaderTableViewCell" customModule="Pintu" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmE-nY-tNe" id="0Ba-E4-5Zc">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-mI-NW2">
-                                            <rect key="frame" x="8" y="8" width="115" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thu, 15 Nov 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEr-TN-NcN">
-                                            <rect key="frame" x="138" y="8" width="174" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sn0-8h-7fD">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iQS-ie-zef">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu, 15 Nov 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEr-TN-NcN">
+                                                        <rect key="frame" x="138" y="8" width="174" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="174" id="n4W-q3-Fu6"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R71-mI-NW2">
+                                                        <rect key="frame" x="8" y="8" width="115" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="115" id="QCS-RU-QwS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="qEr-TN-NcN" secondAttribute="trailing" constant="8" id="4F3-Ho-kFq"/>
+                                                    <constraint firstItem="R71-mI-NW2" firstAttribute="leading" secondItem="iQS-ie-zef" secondAttribute="leading" constant="8" id="8KX-p6-j2k"/>
+                                                    <constraint firstAttribute="bottom" secondItem="R71-mI-NW2" secondAttribute="bottom" constant="8" id="AoQ-es-j54"/>
+                                                    <constraint firstItem="qEr-TN-NcN" firstAttribute="top" secondItem="iQS-ie-zef" secondAttribute="top" constant="8" id="Mm2-zD-Ihm"/>
+                                                    <constraint firstItem="R71-mI-NW2" firstAttribute="top" secondItem="iQS-ie-zef" secondAttribute="top" constant="8" id="aex-7x-I7S"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qEr-TN-NcN" secondAttribute="bottom" constant="8" id="gpn-HW-xHq"/>
+                                                </constraints>
+                                            </view>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Sn0-8h-7fD" firstAttribute="leading" secondItem="0Ba-E4-5Zc" secondAttribute="leading" id="LQT-ax-0SH"/>
+                                        <constraint firstAttribute="bottom" secondItem="Sn0-8h-7fD" secondAttribute="bottom" id="joq-UW-jt7"/>
+                                        <constraint firstItem="Sn0-8h-7fD" firstAttribute="top" secondItem="0Ba-E4-5Zc" secondAttribute="top" id="lKO-hz-uPR"/>
+                                        <constraint firstAttribute="trailing" secondItem="Sn0-8h-7fD" secondAttribute="trailing" id="pUf-sq-RBr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="qEr-TN-NcN" id="kmV-AA-zmS"/>
+                                    <outlet property="dayCounterLabel" destination="R71-mI-NW2" id="NSc-pg-0hL"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="momentsCell" rowHeight="430" id="hOc-ze-xBU" customClass="MomentTableViewCell" customModule="Pintu" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>

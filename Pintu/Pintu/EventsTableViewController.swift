@@ -40,6 +40,25 @@ class EventsTableViewController: UITableViewController {
     }
 
     
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = self.tableView.dequeueReusableCellWithIdentifier("headerCell") as! MomentHeaderTableViewCell
+
+        headerCell.dateLabel.text = "Sat, 20 June 2015"
+        headerCell.dayCounterLabel.text = "Day -10"
+        
+        return headerCell
+    }
+    
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 38
+    }
+    
+    
+    
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MomentTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("momentsCell", forIndexPath: indexPath) as! MomentTableViewCell
 
