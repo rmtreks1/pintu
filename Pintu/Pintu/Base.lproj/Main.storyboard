@@ -371,19 +371,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-e3-5I6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QSr-nJ-R4Z">
-                                        <rect key="frame" x="141" y="461" width="39" height="37"/>
-                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </pageControl>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QSr-nJ-R4Z" secondAttribute="trailing" constant="140" id="7Gx-cy-fMH"/>
-                                    <constraint firstAttribute="bottom" secondItem="QSr-nJ-R4Z" secondAttribute="bottom" constant="70" id="QsK-TB-Faa"/>
-                                    <constraint firstItem="QSr-nJ-R4Z" firstAttribute="top" secondItem="3ab-e3-5I6" secondAttribute="top" constant="461" id="UFP-Kb-dKP"/>
-                                    <constraint firstItem="QSr-nJ-R4Z" firstAttribute="centerX" secondItem="3ab-e3-5I6" secondAttribute="centerX" id="zLC-cv-GUh"/>
-                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnf-5u-Nom">
                                 <rect key="frame" x="82" y="530" width="157" height="30"/>
@@ -398,13 +385,24 @@
                                     <segue destination="OZx-HX-2Qa" kind="modal" modalPresentationStyle="fullScreen" animates="NO" id="n4m-ig-Sei"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="QSr-nJ-R4Z">
+                                <rect key="frame" x="46" y="454" width="228" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Hxn-Rr-ITy"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.22352941179999999" green="0.85882352939999995" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QSr-nJ-R4Z" firstAttribute="leading" secondItem="E2Z-sK-IR7" secondAttribute="leadingMargin" constant="30" id="0fM-pN-H25"/>
+                            <constraint firstItem="Dnf-5u-Nom" firstAttribute="top" secondItem="QSr-nJ-R4Z" secondAttribute="bottom" constant="39" id="5Xc-eA-5Ni"/>
                             <constraint firstItem="3ab-e3-5I6" firstAttribute="top" secondItem="E2Z-sK-IR7" secondAttribute="top" id="Hes-re-a1z"/>
                             <constraint firstAttribute="centerX" secondItem="Dnf-5u-Nom" secondAttribute="centerX" id="NKc-2c-wGT"/>
                             <constraint firstAttribute="trailing" secondItem="3ab-e3-5I6" secondAttribute="trailing" id="WIE-me-D0W"/>
                             <constraint firstItem="3ab-e3-5I6" firstAttribute="leading" secondItem="E2Z-sK-IR7" secondAttribute="leading" id="Xab-TO-NQR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QSr-nJ-R4Z" secondAttribute="trailing" constant="30" id="Zz8-Vl-XAJ"/>
                             <constraint firstItem="G7F-ga-UDh" firstAttribute="top" secondItem="Dnf-5u-Nom" secondAttribute="bottom" constant="8" id="gfc-r6-DqS"/>
                             <constraint firstItem="Dnf-5u-Nom" firstAttribute="top" secondItem="3ab-e3-5I6" secondAttribute="bottom" constant="20" id="woN-5R-euk"/>
                         </constraints>
