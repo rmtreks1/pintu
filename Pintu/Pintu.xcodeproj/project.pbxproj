@@ -26,6 +26,8 @@
 		015449CB1B26E96800B1C9A9 /* MomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449CA1B26E96800B1C9A9 /* MomentsTableViewCell.swift */; };
 		015449CE1B26E9C600B1C9A9 /* GroupedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015449CD1B26E9C600B1C9A9 /* GroupedTableViewController.swift */; };
 		0164ECAE1B2E57E600ACBB75 /* SystemHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0164ECAD1B2E57E600ACBB75 /* SystemHelper.swift */; };
+		01902B111B3417F500F5A74F /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01902B101B3417F500F5A74F /* EventsTableViewController.swift */; };
+		01902B131B34188700F5A74F /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01902B121B34188700F5A74F /* MomentTableViewCell.swift */; };
 		01A814DA1B2997940035D443 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A814D91B2997940035D443 /* SearchHelper.swift */; };
 		01B2212C1B30FF3A00263652 /* HashtagHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B2212B1B30FF3A00263652 /* HashtagHelper.swift */; };
 		01F2DF3D1B271C09002CEE30 /* MainPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */; };
@@ -65,6 +67,8 @@
 		015449CA1B26E96800B1C9A9 /* MomentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsTableViewCell.swift; sourceTree = "<group>"; };
 		015449CD1B26E9C600B1C9A9 /* GroupedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedTableViewController.swift; sourceTree = "<group>"; };
 		0164ECAD1B2E57E600ACBB75 /* SystemHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemHelper.swift; sourceTree = "<group>"; };
+		01902B101B3417F500F5A74F /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		01902B121B34188700F5A74F /* MomentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
 		01A814D91B2997940035D443 /* SearchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
 		01B2212B1B30FF3A00263652 /* HashtagHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagHelper.swift; sourceTree = "<group>"; };
 		01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPhotoVC.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				015449CA1B26E96800B1C9A9 /* MomentsTableViewCell.swift */,
+				01902B121B34188700F5A74F /* MomentTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				015449A11B26E72900B1C9A9 /* AppDelegate.swift */,
+				01902B101B3417F500F5A74F /* EventsTableViewController.swift */,
 				015449CD1B26E9C600B1C9A9 /* GroupedTableViewController.swift */,
 				01F2DF3C1B271C09002CEE30 /* MainPhotoVC.swift */,
 				015449A61B26E72900B1C9A9 /* ViewController.swift */,
@@ -324,7 +330,9 @@
 				015449C51B26E74400B1C9A9 /* DateExtension.swift in Sources */,
 				015449A51B26E72900B1C9A9 /* Pintu.xcdatamodeld in Sources */,
 				0164ECAE1B2E57E600ACBB75 /* SystemHelper.swift in Sources */,
+				01902B131B34188700F5A74F /* MomentTableViewCell.swift in Sources */,
 				01A814DA1B2997940035D443 /* SearchHelper.swift in Sources */,
+				01902B111B3417F500F5A74F /* EventsTableViewController.swift in Sources */,
 				01F2DF3D1B271C09002CEE30 /* MainPhotoVC.swift in Sources */,
 				010B553C1B2FA74F00D4E765 /* StringExtension.swift in Sources */,
 				015449C81B26E92A00B1C9A9 /* DataSource.swift in Sources */,
