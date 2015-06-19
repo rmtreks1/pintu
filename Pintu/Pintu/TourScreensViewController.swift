@@ -112,7 +112,7 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
             
             // 3
             let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
+            newPageView.contentMode = .ScaleAspectFill
             newPageView.frame = frame
             scrollView.addSubview(newPageView)
             
