@@ -239,7 +239,32 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         for asset in assets {
             manager.requestImageForAsset(asset as! PHAsset, targetSize: imageSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
-                fetchedImages.append(result)
+                
+                
+                if let highImageQuality = info[PHImageResultIsDegradedKey] as? Bool {
+                    if !highImageQuality {
+                        println("good quality image retrieved")
+                        fetchedImages.append(result)
+                    }
+                }
+                
+                if fetchedImages.count == assets.count {
+                    // creating new moment out of the images
+                    
+                    
+                    let newComment = "can't believe we got to see these animals"
+                    
+                    let newProfileImage = UIImage(named: "bain.jpg")
+                    
+                    let newMoment: [String: AnyObject] = ["images": fetchedImages, "comment": newComment, "profileImage": newProfileImage!]
+                    
+                    
+                    //        self.moments.append(newMoment)
+                    self.moments.insert(newMoment, atIndex: 0)
+                    
+                    self.tableView.reloadData()
+                }
+                
             })
         }
         
@@ -247,20 +272,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         println("assets count: \(assets.count), fetchedImages count: \(fetchedImages.count)")
         
         
-        // creating new moment out of the images
         
-        
-        let newComment = "can't believe we got to see these animals"
-        
-        let newProfileImage = UIImage(named: "bain.jpg")
-        
-        let newMoment: [String: AnyObject] = ["images": fetchedImages, "comment": newComment, "profileImage": newProfileImage!]
-        
-        
-//        self.moments.append(newMoment)
-        self.moments.insert(newMoment, atIndex: 0)
-        
-        self.tableView.reloadData()
         
         
         
