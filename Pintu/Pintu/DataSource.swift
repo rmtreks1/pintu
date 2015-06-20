@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import CoreData
+import AVKit
 
 class DataSource: NSObject {
    
@@ -19,6 +20,10 @@ class DataSource: NSObject {
     var momentsFetchResult: PHFetchResult?
     var photosPermission: Bool?
     var assetToComment: PHAsset?
+    
+    
+    // temporary for testing
+    var videoAssetForTesting: AVPlayerItem?
 
 
     func populatePhotos(){

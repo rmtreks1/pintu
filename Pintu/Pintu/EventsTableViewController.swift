@@ -314,6 +314,9 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 self.moments.insert(newMoment, atIndex: 0)
                 
                 self.tableView.reloadData()
+                
+                
+                DataSource.sharedInstance.videoAssetForTesting = result
             })
         }
         

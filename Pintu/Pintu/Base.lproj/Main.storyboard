@@ -541,6 +541,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z8B-Hg-dOa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="pZr-2y-AeG">
+                            <connections>
+                                <segue destination="JTo-xH-59H" kind="push" id="Rju-Fu-6aT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Test" id="ecR-q0-IVe">
                             <connections>
                                 <segue destination="dje-F9-r08" kind="push" id="SkV-od-28H"/>
@@ -570,6 +575,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qot-Mp-tnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="827" y="-374"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vra-Zd-Cnf">
+            <objects>
+                <viewController id="JTo-xH-59H" customClass="ViewController" customModule="Pintu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u0l-TJ-iSM"/>
+                        <viewControllerLayoutGuide type="bottom" id="xcm-dS-dbs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QcL-og-Eh2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ug1-Eu-C5Y">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="A2e-qh-8RQ" kind="embed" identifier="embedAVPlayer" id="Q0f-LD-Yrl"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ug1-Eu-C5Y" firstAttribute="leading" secondItem="QcL-og-Eh2" secondAttribute="leading" id="5fl-nd-Vd0"/>
+                            <constraint firstAttribute="trailing" secondItem="ug1-Eu-C5Y" secondAttribute="trailing" id="O6k-3B-oOA"/>
+                            <constraint firstItem="xcm-dS-dbs" firstAttribute="top" secondItem="ug1-Eu-C5Y" secondAttribute="bottom" id="V2n-Q8-cH7"/>
+                            <constraint firstItem="ug1-Eu-C5Y" firstAttribute="top" secondItem="QcL-og-Eh2" secondAttribute="top" id="tvD-Id-MkX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TgC-PA-mH5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6P-Uu-3DS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1283" y="-396"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="cAW-Cc-l3p">
+            <objects>
+                <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="A2e-qh-8RQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJd-7V-KGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1648" y="-400"/>
         </scene>
         <!--Profile-->
         <scene sceneID="6g6-gm-DVO">
