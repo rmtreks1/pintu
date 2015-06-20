@@ -12,7 +12,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     // MARK: - Variables
     // QBImagePicker => https://github.com/questbeat/QBImagePicker
-    let imagePicker = QBImagePickerController()
+    var imagePicker: QBImagePickerController?
     var pickedImage: UIImage?
     
     // DataSource
@@ -29,11 +29,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         super.viewDidLoad()
 
         
-        // setting up the image picker
-        imagePicker.delegate = self
-        imagePicker.allowsMultipleSelection = true
-        imagePicker.showsNumberOfSelectedAssets = true
-        imagePicker.prompt = "choose your moments"
+
         
         
         // time to make some dummy data
@@ -186,9 +182,15 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     @IBAction func createNewMoment(sender: UIBarButtonItem) {
         println("create new moment")
         
-    
+        imagePicker = QBImagePickerController()
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        // setting up the image picker
+        imagePicker!.delegate = self
+        imagePicker!.allowsMultipleSelection = true
+        imagePicker!.showsNumberOfSelectedAssets = true
+        imagePicker!.prompt = "choose your moments"
+        
+        presentViewController(imagePicker!, animated: true, completion: nil)
     }
     
     
@@ -270,14 +272,6 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         // test - checking that image retriever worked
         println("assets count: \(assets.count), fetchedImages count: \(fetchedImages.count)")
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
