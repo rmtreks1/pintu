@@ -226,8 +226,19 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         /* 
         Need to split the videos and images
         */
+        var videoAssets = [PHAsset]()
+        var imageAssets = [PHAsset]()
         
         
+        for asset in assets as! [PHAsset] {
+            if asset.mediaType == PHAssetMediaType.Video {
+                videoAssets.append(asset)
+            } else if asset.mediaType == PHAssetMediaType.Image {
+                imageAssets.append(asset)
+            }
+        }
+        
+        println("\(imageAssets.count) images and \(videoAssets.count) videos : total \(assets.count)")
         
         
         // set image size
@@ -236,11 +247,13 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         // get the image for every asset
         var fetchedImages = [UIImage]()
+
         
         let manager = PHImageManager.defaultManager()
         
-        for asset in assets {
-            manager.requestImageForAsset(asset as! PHAsset, targetSize: imageSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
+        // Image Assets
+        for asset in imageAssets {
+            manager.requestImageForAsset(asset, targetSize: imageSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
                 
                 
                 if let highImageQuality = info[PHImageResultIsDegradedKey] as? Bool {
@@ -250,7 +263,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                     }
                 }
                 
-                if fetchedImages.count == assets.count {
+                if fetchedImages.count == imageAssets.count {
                     // creating new moment out of the images
                     
                     
