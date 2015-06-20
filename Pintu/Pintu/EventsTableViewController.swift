@@ -160,6 +160,9 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     }
     
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     
