@@ -10,8 +10,19 @@ import UIKit
 
 class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate {
     
+    // MARK: - Variables
+    // QBImagePicker => https://github.com/questbeat/QBImagePicker
     let imagePicker = QBImagePickerController()
     var pickedImage: UIImage?
+    
+    // DataSource
+    var moments = [[UIImage]]()
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +34,9 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         imagePicker.showsNumberOfSelectedAssets = true
         imagePicker.prompt = "choose your moments"
         
+        
+        // time to make some dummy data
+        makeSomeDummyData()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -48,7 +62,10 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        
+        let numberOfMomentsInDay = self.moments.count
+        
+        return numberOfMomentsInDay
     }
 
     
@@ -74,7 +91,13 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MomentTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("momentsCell", forIndexPath: indexPath) as! MomentTableViewCell
 
+        
+        // get the images
+        let pageImages = self.moments[indexPath.row]
+        
+        
         // Configure the cell...
+        cell.pageImages = pageImages
         let cellWidth = self.tableView.frame.size.width
         cell.setupTheScrollView(cellWidth)
 
@@ -185,6 +208,31 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     
     
+    
+    
+    // MARK: - Dummy Data
+    
+    func makeSomeDummyData(){
+        
+        let dummyMoment = [UIImage(named: "1.jpg")!,
+            UIImage(named: "2.jpg")!,
+            UIImage(named: "3.jpg")!,
+            UIImage(named: "4.jpg")!]
+        
+        let dummyMoment2 = [UIImage(named: "5.jpg")!,
+            UIImage(named: "6.jpg")!,
+            UIImage(named: "7.jpg")!]
+        
+        
+        for index in 0...4 {
+            if index % 2 == 0 {
+                self.moments.append(dummyMoment2)
+            } else {
+               self.moments.append(dummyMoment)
+            }
+        }
+        println("created \(self.moments.count) dummy moments")
+    }
     
     
     

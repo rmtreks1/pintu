@@ -17,7 +17,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
     
-    var pageImages: [UIImage] = []
+    var pageImages = [UIImage]()
     var pageViews: [UIImageView?] = []
     
     
@@ -39,10 +39,10 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         self.scrollView.delegate = self
         
         // 1
-        pageImages = [UIImage(named: "1.jpg")!,
-            UIImage(named: "2.jpg")!,
-            UIImage(named: "3.jpg")!,
-            UIImage(named: "4.jpg")!]
+//        pageImages = [UIImage(named: "1.jpg")!,
+//            UIImage(named: "2.jpg")!,
+//            UIImage(named: "3.jpg")!,
+//            UIImage(named: "4.jpg")!]
         
         let pageCount = pageImages.count
         
