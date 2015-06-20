@@ -97,11 +97,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         let thisMoment = self.moments[indexPath.row]
         let pageImages = thisMoment["images"] as! [UIImage]
         let comment = thisMoment["comment"] as! String
-        
+        let profileImage = thisMoment["profileImage"] as! UIImage
         
         // Configure the cell...
         cell.pageImages = pageImages
         cell.commentLabel.text = comment
+        cell.profileImageView.image = profileImage
         let cellWidth = self.tableView.frame.size.width
         cell.setupTheScrollView(cellWidth)
         
@@ -233,30 +234,37 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     func makeSomeDummyData(){
         
+        // dummy moment 1
         let dummyMomentImages = [UIImage(named: "1.jpg")!,
             UIImage(named: "2.jpg")!,
             UIImage(named: "3.jpg")!,
             UIImage(named: "4.jpg")!]
         
         let dummyComment = "amazing landmarks from our travels around the world"
+
+        let dummyProfileImage = UIImage(named: "batman.jpg")
         
-        let dummyMoment = ["images": dummyMomentImages, "comment": dummyComment]
+        let dummyMoment: [String: AnyObject] = ["images": dummyMomentImages, "comment": dummyComment, "profileImage": dummyProfileImage!]
         
+
         
+        // dummy moment 2
         let dummyMoment2Images = [UIImage(named: "5.jpg")!,
             UIImage(named: "6.jpg")!,
             UIImage(named: "7.jpg")!]
         
         let dummyComment2 = "can't believe we got to see these animals"
         
-        let dummyMoment2 = ["images": dummyMoment2Images, "comment": dummyComment2]
+        let dummyProfileImage2 = UIImage(named: "bain.jpg")
+        
+        let dummyMoment2: [String: AnyObject] = ["images": dummyMoment2Images, "comment": dummyComment2, "profileImage": dummyProfileImage2!]
         
         
         for index in 0...4 {
             if index % 2 == 0 {
-                self.moments.append(dummyMoment2 as! [String : AnyObject])
+                self.moments.append(dummyMoment2 as [String : AnyObject])
             } else {
-               self.moments.append(dummyMoment as! [String : AnyObject])
+               self.moments.append(dummyMoment as [String : AnyObject])
             }
         }
         println("created \(self.moments.count) dummy moments")
