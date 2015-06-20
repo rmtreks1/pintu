@@ -16,7 +16,8 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     var pickedImage: UIImage?
     
     // DataSource
-    var moments = [[UIImage]]()
+//    var moments = [[UIImage]]()
+    var moments = [[String: AnyObject]]()
     
     
     
@@ -93,7 +94,8 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
 
         
         // get the images
-        let pageImages = self.moments[indexPath.row]
+        let thisMoment = self.moments[indexPath.row]
+        let pageImages = thisMoment["images"] as! [UIImage]
         
         
         // Configure the cell...
@@ -229,21 +231,30 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     func makeSomeDummyData(){
         
-        let dummyMoment = [UIImage(named: "1.jpg")!,
+        let dummyMomentImages = [UIImage(named: "1.jpg")!,
             UIImage(named: "2.jpg")!,
             UIImage(named: "3.jpg")!,
             UIImage(named: "4.jpg")!]
         
-        let dummyMoment2 = [UIImage(named: "5.jpg")!,
+        let dummyComment = "amazing landmarks from our travels around the world"
+        
+        let dummyMoment = ["images": dummyMomentImages, "comment": dummyComment]
+        
+        
+        let dummyMoment2Images = [UIImage(named: "5.jpg")!,
             UIImage(named: "6.jpg")!,
             UIImage(named: "7.jpg")!]
+        
+        let dummyComment2 = "can't believe we got to see these animals"
+        
+        let dummyMoment2 = ["images": dummyMoment2Images, "comment": dummyComment2]
         
         
         for index in 0...4 {
             if index % 2 == 0 {
-                self.moments.append(dummyMoment2)
+                self.moments.append(dummyMoment2 as! [String : AnyObject])
             } else {
-               self.moments.append(dummyMoment)
+               self.moments.append(dummyMoment as! [String : AnyObject])
             }
         }
         println("created \(self.moments.count) dummy moments")
