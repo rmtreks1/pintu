@@ -21,7 +21,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     var pageViews: [UIImageView?] = []
     
     @IBOutlet var commentLabel: UILabel!
-
+    @IBOutlet var profileImageView: UIImageView!
     
 
     override func awakeFromNib() {
@@ -39,6 +39,11 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func setupTheScrollView(width: CGFloat){
         
         self.scrollView.delegate = self
+
+        // circular profile image view
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
+        self.profileImageView.clipsToBounds = true
+        
         
         self.commentLabel.sizeToFit()
         

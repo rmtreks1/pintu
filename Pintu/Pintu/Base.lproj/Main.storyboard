@@ -155,6 +155,7 @@
                                 <connections>
                                     <outlet property="commentLabel" destination="pZu-y6-6oL" id="OZy-n3-zal"/>
                                     <outlet property="pageControl" destination="ANe-Pg-iuN" id="1Cn-I5-qF2"/>
+                                    <outlet property="profileImageView" destination="S6F-Me-Axa" id="jVm-Hp-m0W"/>
                                     <outlet property="scrollView" destination="ZDh-9W-SfB" id="5tT-pM-CA7"/>
                                 </connections>
                             </tableViewCell>
