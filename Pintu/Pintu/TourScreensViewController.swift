@@ -210,4 +210,7 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
         loadVisiblePages()
     }
     
+       
+    
+    
 }

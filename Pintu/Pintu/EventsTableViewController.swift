@@ -8,11 +8,19 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    let imagePicker = UIImagePickerController()
+    var pickedImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
+        
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -125,5 +133,37 @@ class EventsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    // MARK: - Camera Picker, UIImagePicker Delegate
+    
+    @IBAction func createNewMoment(sender: UIBarButtonItem) {
+        println("create new moment")
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        println("finished picking")
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+           self.pickedImage = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
 
 }

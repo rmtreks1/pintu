@@ -168,7 +168,11 @@ xxxxx</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="eOw-Nr-5L3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKR-rc-Hdi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zKR-rc-Hdi">
+                            <connections>
+                                <action selector="createNewMoment:" destination="dje-F9-r08" id="s45-VL-EE4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0u-Qd-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
