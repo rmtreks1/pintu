@@ -92,26 +92,35 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         // reset incase cell used before
         cell.resetCell()
         
-        
-        // get the images
+        // check the moment type
         let thisMoment = self.moments[indexPath.row]
-        let pageImages = thisMoment["images"] as! [UIImage]
-        let comment = thisMoment["comment"] as! String
-        let profileImage = thisMoment["profileImage"] as! UIImage
+        let momentType = thisMoment["momentType"] as! String
+        println(momentType)
         
-        // Configure the cell...
-        cell.pageImages = pageImages
-        cell.commentLabel.text = comment
-        cell.profileImageView.image = profileImage
-        let cellWidth = self.tableView.frame.size.width
-        cell.setupTheScrollView(cellWidth)
+        
+        if momentType == "image" {
+            // get the images
+            
+            let pageImages = thisMoment["images"] as! [UIImage]
+            let comment = thisMoment["comment"] as! String
+            let profileImage = thisMoment["profileImage"] as! UIImage
+            
+            // Configure the cell...
+            cell.pageImages = pageImages
+            cell.commentLabel.text = comment
+            cell.profileImageView.image = profileImage
+            let cellWidth = self.tableView.frame.size.width
+            cell.setupTheScrollView(cellWidth)
+          
+        }
+        
+        
         
         
         /*
         Need to be able to pass through a dictionary to the moment table view cell.
         With the images, videos, comments, likes, etc...
         */
-        
         
         
 
@@ -252,6 +261,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         let manager = PHImageManager.defaultManager()
         
         // Image Assets
+        // create 1 moment for all the image assets
         for asset in imageAssets {
             manager.requestImageForAsset(asset, targetSize: imageSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
                 
@@ -264,6 +274,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 }
                 
                 if fetchedImages.count == imageAssets.count {
+                    
                     // creating new moment out of the images
                     
                     
@@ -271,7 +282,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                     
                     let newProfileImage = UIImage(named: "bain.jpg")
                     
-                    let newMoment: [String: AnyObject] = ["images": fetchedImages, "comment": newComment, "profileImage": newProfileImage!]
+                    let newMoment: [String: AnyObject] = ["momentType": "image", "images": fetchedImages, "comment": newComment, "profileImage": newProfileImage!]
                     
                     
                     //        self.moments.append(newMoment)
@@ -283,8 +294,33 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
             })
         }
         
-        // test - checking that image retriever worked
-        println("assets count: \(assets.count), fetchedImages count: \(fetchedImages.count)")
+       
+        
+        // Video Assets
+        
+        for asset in videoAssets {
+            manager.requestPlayerItemForVideo(asset, options: nil, resultHandler: { (result: AVPlayerItem!, info: [NSObject : AnyObject]!) -> Void in
+                // creating new moment out of the images
+                
+                
+                let newComment = "video time"
+                
+                let newProfileImage = UIImage(named: "bain.jpg")
+                
+                let newMoment: [String: AnyObject] = ["momentType": "video", "video": result, "comment": newComment, "profileImage": newProfileImage!]
+                
+                
+                //        self.moments.append(newMoment)
+                self.moments.insert(newMoment, atIndex: 0)
+                
+                self.tableView.reloadData()
+            })
+        }
+        
+        
+        
+        
+        
         
         
         
@@ -309,7 +345,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
 
         let dummyProfileImage = UIImage(named: "batman.jpg")
         
-        let dummyMoment: [String: AnyObject] = ["images": dummyMomentImages, "comment": dummyComment, "profileImage": dummyProfileImage!]
+        let dummyMoment: [String: AnyObject] = ["momentType": "image", "images": dummyMomentImages, "comment": dummyComment, "profileImage": dummyProfileImage!]
         
 
         
@@ -322,7 +358,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         let dummyProfileImage2 = UIImage(named: "bain.jpg")
         
-        let dummyMoment2: [String: AnyObject] = ["images": dummyMoment2Images, "comment": dummyComment2, "profileImage": dummyProfileImage2!]
+        let dummyMoment2: [String: AnyObject] = ["momentType": "image", "images": dummyMoment2Images, "comment": dummyComment2, "profileImage": dummyProfileImage2!]
         
         
         for index in 0...4 {
