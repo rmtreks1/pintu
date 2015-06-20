@@ -20,6 +20,8 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     var pageImages = [UIImage]()
     var pageViews: [UIImageView?] = []
     
+    @IBOutlet var commentLabel: UILabel!
+
     
 
     override func awakeFromNib() {
@@ -38,7 +40,9 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         
         self.scrollView.delegate = self
         
-        // 1        
+        self.commentLabel.sizeToFit()
+        
+        // 1
         let pageCount = pageImages.count
         
         // 2

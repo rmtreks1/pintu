@@ -96,10 +96,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         // get the images
         let thisMoment = self.moments[indexPath.row]
         let pageImages = thisMoment["images"] as! [UIImage]
+        let comment = thisMoment["comment"] as! String
         
         
         // Configure the cell...
         cell.pageImages = pageImages
+        cell.commentLabel.text = comment
         let cellWidth = self.tableView.frame.size.width
         cell.setupTheScrollView(cellWidth)
         
