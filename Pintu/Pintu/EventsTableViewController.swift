@@ -8,16 +8,20 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate {
     
-    let imagePicker = UIImagePickerController()
+    let imagePicker = QBImagePickerController()
     var pickedImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imagePicker.delegate = self
         
+        // setting up the image picker
+        imagePicker.delegate = self
+        imagePicker.allowsMultipleSelection = true
+        imagePicker.showsNumberOfSelectedAssets = true
+        imagePicker.prompt = "choose your moments"
         
         
         
@@ -141,8 +145,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     @IBAction func createNewMoment(sender: UIBarButtonItem) {
         println("create new moment")
         
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+    
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
@@ -163,6 +166,22 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    
+    // MARK: - QBImagePicker Delegate
+
+    func qb_imagePickerControllerDidCancel(imagePickerController: QBImagePickerController!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func qb_imagePickerController(imagePickerController: QBImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+        println("user picked \(assets.count) media")
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     
     
