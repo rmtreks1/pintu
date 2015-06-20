@@ -178,6 +178,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     func qb_imagePickerController(imagePickerController: QBImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
         println("user picked \(assets.count) media")
+        println("put these assets into a moment")
         
         dismissViewControllerAnimated(true, completion: nil)
     }
