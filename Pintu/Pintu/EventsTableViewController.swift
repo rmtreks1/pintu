@@ -93,6 +93,10 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         let cell = tableView.dequeueReusableCellWithIdentifier("momentsCell", forIndexPath: indexPath) as! MomentTableViewCell
 
         
+        // reset incase cell used before
+        cell.resetCell()
+        
+        
         // get the images
         let thisMoment = self.moments[indexPath.row]
         let pageImages = thisMoment["images"] as! [UIImage]
@@ -220,6 +224,48 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         /* 
         Need to split the videos and images
         */
+        
+        
+        
+        
+        // set image size
+        let width = self.tableView.frame.width
+        let imageSize = CGSizeMake(width, width)
+        
+        // get the image for every asset
+        var fetchedImages = [UIImage]()
+        
+        let manager = PHImageManager.defaultManager()
+        
+        for asset in assets {
+            manager.requestImageForAsset(asset as! PHAsset, targetSize: imageSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
+                fetchedImages.append(result)
+            })
+        }
+        
+        // test - checking that image retriever worked
+        println("assets count: \(assets.count), fetchedImages count: \(fetchedImages.count)")
+        
+        
+        // creating new moment out of the images
+        
+        
+        let newComment = "can't believe we got to see these animals"
+        
+        let newProfileImage = UIImage(named: "bain.jpg")
+        
+        let newMoment: [String: AnyObject] = ["images": fetchedImages, "comment": newComment, "profileImage": newProfileImage!]
+        
+        
+//        self.moments.append(newMoment)
+        self.moments.insert(newMoment, atIndex: 0)
+        
+        self.tableView.reloadData()
+        
+        
+        
+        
+        
         
         
         

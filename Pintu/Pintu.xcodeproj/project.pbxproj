@@ -28,6 +28,7 @@
 		016608991B357C89002B7F39 /* batman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 016608971B357C89002B7F39 /* batman.jpg */; };
 		0166089A1B357C89002B7F39 /* gordon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 016608981B357C89002B7F39 /* gordon.jpg */; };
 		0166089C1B358E01002B7F39 /* bain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0166089B1B358E01002B7F39 /* bain.jpg */; };
+		0166089E1B358FC8002B7F39 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 0166089D1B358FC8002B7F39 /* placeholder.png */; };
 		01736F8E1B343B4B007A55E7 /* MyMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01736F8D1B343B4B007A55E7 /* MyMomentsViewController.swift */; };
 		01736F931B344D8B007A55E7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01736F8F1B344D8B007A55E7 /* 1.jpg */; };
 		01736F941B344D8B007A55E7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01736F901B344D8B007A55E7 /* 2.jpg */; };
@@ -78,6 +79,7 @@
 		016608971B357C89002B7F39 /* batman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = batman.jpg; sourceTree = "<group>"; };
 		016608981B357C89002B7F39 /* gordon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gordon.jpg; sourceTree = "<group>"; };
 		0166089B1B358E01002B7F39 /* bain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bain.jpg; sourceTree = "<group>"; };
+		0166089D1B358FC8002B7F39 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		01736F8D1B343B4B007A55E7 /* MyMomentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMomentsViewController.swift; sourceTree = "<group>"; };
 		01736F8F1B344D8B007A55E7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		01736F901B344D8B007A55E7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				016608971B357C89002B7F39 /* batman.jpg */,
 				016608981B357C89002B7F39 /* gordon.jpg */,
 				0166089B1B358E01002B7F39 /* bain.jpg */,
+				0166089D1B358FC8002B7F39 /* placeholder.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				01736F941B344D8B007A55E7 /* 2.jpg in Resources */,
 				01736F951B344D8B007A55E7 /* 3.jpg in Resources */,
 				016608961B3560D9002B7F39 /* 7.jpg in Resources */,
+				0166089E1B358FC8002B7F39 /* placeholder.png in Resources */,
 				015449AF1B26E72900B1C9A9 /* LaunchScreen.xib in Resources */,
 				015449AC1B26E72900B1C9A9 /* Images.xcassets in Resources */,
 			);

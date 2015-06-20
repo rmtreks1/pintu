@@ -36,6 +36,18 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     
+    
+    func resetCell(){
+        println("reset cell")
+        pageImages = []
+        pageViews = []
+        commentLabel.text = nil
+        profileImageView.image = UIImage(named: "placeholder.png")
+    }
+    
+    
+    
+    
     func setupTheScrollView(width: CGFloat){
         
         self.scrollView.delegate = self
