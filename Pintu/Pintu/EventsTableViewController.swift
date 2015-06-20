@@ -100,6 +100,15 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         cell.pageImages = pageImages
         let cellWidth = self.tableView.frame.size.width
         cell.setupTheScrollView(cellWidth)
+        
+        
+        /*
+        Need to be able to pass through a dictionary to the moment table view cell.
+        With the images, videos, comments, likes, etc...
+        */
+        
+        
+        
 
         return cell
     }
@@ -202,6 +211,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     func qb_imagePickerController(imagePickerController: QBImagePickerController!, didFinishPickingAssets assets: [AnyObject]!) {
         println("user picked \(assets.count) media")
         println("put these assets into a moment")
+        
+        /* 
+        Need to split the videos and images
+        */
+        
+        
         
         dismissViewControllerAnimated(true, completion: nil)
     }
