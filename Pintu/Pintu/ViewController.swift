@@ -46,13 +46,8 @@ class ViewController: UIViewController {
     
     func configureView() {
         if let playerItem = DataSource.sharedInstance.videoAssetForTesting {
-            self.player = self.createPlayerByPrefixingItem(playerItem)
+            self.player = AVQueuePlayer(playerItem: playerItem)
         }
-    }
-    
-    private func createPlayerByPrefixingItem(playerItem: AVPlayerItem) -> AVPlayer {
-//        let countdown = AVPlayerItem(URL: NSBundle.mainBundle().URLForResource("countdown_new", withExtension: "mov"))
-        return AVQueuePlayer(items: [playerItem])
     }
 
 }
