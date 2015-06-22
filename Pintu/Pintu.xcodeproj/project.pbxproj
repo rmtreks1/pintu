@@ -35,6 +35,7 @@
 		01736F951B344D8B007A55E7 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01736F911B344D8B007A55E7 /* 3.jpg */; };
 		01736F961B344D8B007A55E7 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01736F921B344D8B007A55E7 /* 4.jpg */; };
 		01736F981B345D32007A55E7 /* MomentHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01736F971B345D32007A55E7 /* MomentHeaderTableViewCell.swift */; };
+		018375601B377F7000E582A9 /* TestForVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183755F1B377F7000E582A9 /* TestForVideoTableViewController.swift */; };
 		01902B111B3417F500F5A74F /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01902B101B3417F500F5A74F /* EventsTableViewController.swift */; };
 		01902B131B34188700F5A74F /* MomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01902B121B34188700F5A74F /* MomentTableViewCell.swift */; };
 		01A814DA1B2997940035D443 /* SearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A814D91B2997940035D443 /* SearchHelper.swift */; };
@@ -86,6 +87,7 @@
 		01736F911B344D8B007A55E7 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		01736F921B344D8B007A55E7 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		01736F971B345D32007A55E7 /* MomentHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0183755F1B377F7000E582A9 /* TestForVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestForVideoTableViewController.swift; sourceTree = "<group>"; };
 		01902B101B3417F500F5A74F /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		01902B121B34188700F5A74F /* MomentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentTableViewCell.swift; sourceTree = "<group>"; };
 		01A814D91B2997940035D443 /* SearchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHelper.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				015449A61B26E72900B1C9A9 /* ViewController.swift */,
 				0129A7DB1B28809C00DA6BCF /* SearchViewController.swift */,
 				011607281B33C91F00403EA3 /* TourScreensViewController.swift */,
+				0183755F1B377F7000E582A9 /* TestForVideoTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				015449C81B26E92A00B1C9A9 /* DataSource.swift in Sources */,
 				015449A21B26E72900B1C9A9 /* AppDelegate.swift in Sources */,
 				011607291B33C91F00403EA3 /* TourScreensViewController.swift in Sources */,
+				018375601B377F7000E582A9 /* TestForVideoTableViewController.swift in Sources */,
 				01736F981B345D32007A55E7 /* MomentHeaderTableViewCell.swift in Sources */,
 				015449CB1B26E96800B1C9A9 /* MomentsTableViewCell.swift in Sources */,
 			);
