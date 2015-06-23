@@ -26,6 +26,8 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet var likeButton: UIButton!
     var likeState: Bool?
     
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

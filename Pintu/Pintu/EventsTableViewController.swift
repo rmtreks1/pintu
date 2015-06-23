@@ -339,6 +339,14 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
         println("long pressed like a baby")
+//        let cell = MomentTableViewCell.sender.view
+        
+        let point: CGPoint = sender.locationInView(self.tableView)
+        let indexPath = self.tableView.indexPathForRowAtPoint(point)
+        
+        if let _indexPath = indexPath {
+            println("indexPath is \(_indexPath.section):\(_indexPath.row)")
+        }
     }
     
     
