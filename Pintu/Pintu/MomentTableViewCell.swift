@@ -63,15 +63,6 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         self.contentView.addSubview(self.playerVC.view)
         
         playerVC.player.play()
-        
-//        let playerVC = AVPlayerViewController()
-//        playerVC.player = DataSource.sharedInstance.videoAssetForTesting
-//        playerVC.showsPlaybackControls = false
-//        let width = self.tableView.frame.size.width
-//        playerVC.view.frame = CGRectMake(0, 0, width, width)
-//        cell.contentView.addSubview(playerVC.view)
-//        playerVC.player.play()
-
     }
     
     
@@ -83,6 +74,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         commentLabel.text = nil
         profileImageView.image = UIImage(named: "placeholder.png")
         self.likeButton.selected = false
+        self.playerVC.view.removeFromSuperview()
     }
     
     
