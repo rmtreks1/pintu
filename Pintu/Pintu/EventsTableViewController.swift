@@ -116,6 +116,8 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
             let cellWidth = self.tableView.frame.size.width
             cell.setupTheScrollView(cellWidth)
           
+        } else {
+            cell.setUpVideoCell(self.tableView.frame.size.width)
         }
         
         
@@ -315,19 +317,19 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 
                 
                 
-                
+                DataSource.sharedInstance.videoAssetForTesting = AVQueuePlayer(playerItem: result)
                 
                 
                 //        self.moments.append(newMoment)
-//                self.moments.insert(newMoment, atIndex: 0)
+                self.moments.insert(newMoment, atIndex: 0)
                 
                 // do something like once count matches then reload Data
-//                self.tableView.reloadData()
+                self.tableView.reloadData()
                 
                 
 
                 
-                DataSource.sharedInstance.videoAssetForTesting = AVQueuePlayer(playerItem: result)
+
             })
         }
         

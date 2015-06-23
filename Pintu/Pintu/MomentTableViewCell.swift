@@ -11,6 +11,7 @@
 
 
 import UIKit
+import AVKit
 
 class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
@@ -25,6 +26,8 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     @IBOutlet var likeButton: UIButton!
     var likeState: Bool?
+    
+    var playerVC = AVPlayerViewController()
     
     
     
@@ -51,6 +54,25 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         self.likeButton.setImage(buttonStateNotLikedImage, forState: UIControlState.Normal)
     }
     
+    
+    func setUpVideoCell(width: CGFloat){
+        self.playerVC.player = DataSource.sharedInstance.videoAssetForTesting
+        self.playerVC.showsPlaybackControls = false
+        self.playerVC.view.frame = CGRectMake(0, 0, width, width)
+        
+        self.contentView.addSubview(self.playerVC.view)
+        
+        playerVC.player.play()
+        
+//        let playerVC = AVPlayerViewController()
+//        playerVC.player = DataSource.sharedInstance.videoAssetForTesting
+//        playerVC.showsPlaybackControls = false
+//        let width = self.tableView.frame.size.width
+//        playerVC.view.frame = CGRectMake(0, 0, width, width)
+//        cell.contentView.addSubview(playerVC.view)
+//        playerVC.player.play()
+
+    }
     
     
     
