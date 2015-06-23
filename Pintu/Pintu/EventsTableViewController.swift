@@ -301,7 +301,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
        
         
         // Video Assets
-        
+//        let player = AVQueuePlayer()
         for asset in videoAssets {
             manager.requestPlayerItemForVideo(asset, options: nil, resultHandler: { (result: AVPlayerItem!, info: [NSObject : AnyObject]!) -> Void in
                 // creating new moment out of the images
@@ -314,15 +314,24 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 let newMoment: [String: AnyObject] = ["momentType": "video", "video": result, "comment": newComment, "profileImage": newProfileImage!]
                 
                 
+                
+                
+                
+                
                 //        self.moments.append(newMoment)
-                self.moments.insert(newMoment, atIndex: 0)
+//                self.moments.insert(newMoment, atIndex: 0)
                 
-                self.tableView.reloadData()
+                // do something like once count matches then reload Data
+//                self.tableView.reloadData()
                 
                 
-                DataSource.sharedInstance.videoAssetForTesting = result
+
+                
+                DataSource.sharedInstance.videoAssetForTesting = AVQueuePlayer(playerItem: result)
             })
         }
+        
+
         
         
         

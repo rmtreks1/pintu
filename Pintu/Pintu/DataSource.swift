@@ -23,7 +23,7 @@ class DataSource: NSObject {
     
     
     // temporary for testing
-    var videoAssetForTesting: AVPlayerItem?
+    var videoAssetForTesting: AVPlayer?
 
 
     func populatePhotos(){

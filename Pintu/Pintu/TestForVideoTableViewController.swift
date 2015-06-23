@@ -10,6 +10,9 @@ import UIKit
 import AVKit
 
 class TestForVideoTableViewController: UITableViewController {
+    
+    
+    var playersDict = [Int:AVQueuePlayer]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,17 @@ class TestForVideoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        for player in playersDict.values {
+            player.pause()
+            player.removeAllItems()
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,29 +61,37 @@ class TestForVideoTableViewController: UITableViewController {
         // Configure the cell...
         
         
-        let playerItem = DataSource.sharedInstance.videoAssetForTesting
-        let player = AVQueuePlayer(playerItem: playerItem)
+//        let playerItem = DataSource.sharedInstance.videoAssetForTesting
+//        
+//        if let player = playersDict[indexPath.row]{
+//            player.removeAllItems()
+//            player.insertItem(playerItem, afterItem: nil)
+//        } else {
+//            let player = AVQueuePlayer(playerItem: playerItem)
+//            let playerVC = AVPlayerViewController()
+//            playerVC.view.tag = 100
+//            playerVC.player = player
+//            playerVC.showsPlaybackControls = false
+//            let width = self.tableView.frame.size.width
+//            playerVC.view.frame = CGRectMake(0, 0, width, width)
+//            cell.contentView.addSubview(playerVC.view)
+//            playersDict[indexPath.row] = player
+//            playerVC.player.play()
+//
+//        }
         
+
         let playerVC = AVPlayerViewController()
-        playerVC.player = player
+        playerVC.player = DataSource.sharedInstance.videoAssetForTesting
         playerVC.showsPlaybackControls = false
         let width = self.tableView.frame.size.width
         playerVC.view.frame = CGRectMake(0, 0, width, width)
-//        playerVC.view.frame = self.view.frame
-        
-        self.view.addSubview(playerVC.view)
-
+        cell.contentView.addSubview(playerVC.view)
         playerVC.player.play()
+
+        
         println("playing")
         
-//        let playerLayer = AVPlayerLayer()
-//        playerLayer.player = player
-//        
-//        playerLayer.frame = self.view.frame
-//
-//        self.view.layer.addSublayer(playerLayer)
-        
-//        player.play()
         
 
         return cell

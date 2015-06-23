@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     
     func configureView() {
         if let playerItem = DataSource.sharedInstance.videoAssetForTesting {
-            self.player = AVQueuePlayer(playerItem: playerItem)
+//            self.player = AVQueuePlayer(playerItem: playerItem)
+            self.player = playerItem
         }
     }
 
