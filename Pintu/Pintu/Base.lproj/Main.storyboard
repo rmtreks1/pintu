@@ -113,9 +113,13 @@
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ZDh-9W-SfB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ZDh-9W-SfB" secondAttribute="height" multiplier="1:1" id="6uq-sG-pGT"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Ke2-8o-XZ7" appends="YES" id="cey-vr-98G"/>
+                                            </connections>
                                         </scrollView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-Pg-iuN">
                                             <rect key="frame" x="38" y="268" width="244" height="37"/>
@@ -178,6 +182,11 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0u-Qd-8RA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.40000000000000002" id="Ke2-8o-XZ7">
+                    <connections>
+                        <action selector="longPressed:" destination="dje-F9-r08" id="Bld-TQ-Gsk"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1711" y="356"/>
         </scene>

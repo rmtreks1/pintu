@@ -337,6 +337,10 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     // MARK: - Cell Interactions
     
+    @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
+        println("long pressed like a baby")
+    }
+    
     
    
     
