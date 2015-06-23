@@ -69,7 +69,7 @@
                                     <outlet property="dayCounterLabel" destination="R71-mI-NW2" id="NSc-pg-0hL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="momentsCell" rowHeight="430" id="hOc-ze-xBU" customClass="MomentTableViewCell" customModule="Pintu" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="momentsCell" rowHeight="430" id="hOc-ze-xBU" customClass="MomentTableViewCell" customModule="Pintu" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hOc-ze-xBU" id="CLr-MH-pL7">
                                     <autoresizingMask key="autoresizingMask"/>
