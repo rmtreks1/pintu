@@ -362,6 +362,26 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     
    
+    @IBAction func tapPressed(sender: UITapGestureRecognizer) {
+        let point: CGPoint = sender.locationInView(self.tableView)
+        let indexPath = self.tableView.indexPathForRowAtPoint(point)
+        
+        if let _indexPath = indexPath {
+            let cell = self.tableView.cellForRowAtIndexPath(_indexPath) as! MomentTableViewCell
+            
+            // switching volume on and off
+            if cell.mediaType == "video" {
+                println("this is a video")
+                if cell.playerVC.player.volume == Float(0) {
+                    cell.playerVC.player.volume = Float(1)
+                } else {
+                    cell.playerVC.player.volume = Float(0)
+                }
+
+            }
+        }
+        
+    }
     
     
     

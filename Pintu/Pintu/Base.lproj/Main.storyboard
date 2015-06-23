@@ -119,6 +119,7 @@
                                             </constraints>
                                             <connections>
                                                 <outletCollection property="gestureRecognizers" destination="Ke2-8o-XZ7" appends="YES" id="cey-vr-98G"/>
+                                                <outletCollection property="gestureRecognizers" destination="VCl-Mj-aWY" appends="YES" id="Kpn-rx-oGE"/>
                                             </connections>
                                         </scrollView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ANe-Pg-iuN">
@@ -187,6 +188,11 @@
                         <action selector="longPressed:" destination="dje-F9-r08" id="Bld-TQ-Gsk"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="VCl-Mj-aWY">
+                    <connections>
+                        <action selector="tapPressed:" destination="dje-F9-r08" id="VAl-5L-Hkc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1711" y="356"/>
         </scene>

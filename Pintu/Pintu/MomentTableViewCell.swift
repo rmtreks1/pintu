@@ -29,6 +29,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     var playerVC = AVPlayerViewController()
     
+    var mediaType: String? // change this to an enum
     
     
 
@@ -60,8 +61,12 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         self.playerVC.showsPlaybackControls = false
         self.playerVC.player.volume = Float(0)
         self.playerVC.view.frame = CGRectMake(0, 0, width, width)
+        self.playerVC.view.userInteractionEnabled = false
+        
         
         self.contentView.addSubview(self.playerVC.view)
+        
+        self.mediaType = "video"
         
         playerVC.player.play()
     }
