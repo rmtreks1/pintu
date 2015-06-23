@@ -23,6 +23,9 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet var commentLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     
+    @IBOutlet var likeButton: UIButton!
+    var likeState: Bool?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,6 +39,18 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
     
     
+    func setUpCell(){
+        
+        // like button images
+        let buttonStateLikeImage = UIImage(named: "heart-full")
+        let buttonStateNotLikedImage = UIImage(named: "heart-empty")
+        
+        self.likeButton.setImage(buttonStateLikeImage, forState: UIControlState.Selected)
+        self.likeButton.setImage(buttonStateNotLikedImage, forState: UIControlState.Normal)
+    }
+    
+    
+    
     
     func resetCell(){
         println("reset cell")
@@ -43,6 +58,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         pageViews = []
         commentLabel.text = nil
         profileImageView.image = UIImage(named: "placeholder.png")
+        self.likeButton.selected = false
     }
     
     
@@ -186,6 +202,18 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     
     
+    
+    @IBAction func likeButtonPressed(sender: UIButton) {
+        println("like button pressed")
+
+        if self.likeButton.selected {
+            println("unlike this")
+            self.likeButton.selected = false
+        } else {
+            println("like this")
+            self.likeButton.selected = true
+        }
+    }
     
     
     

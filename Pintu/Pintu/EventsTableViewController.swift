@@ -92,6 +92,10 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         // reset incase cell used before
         cell.resetCell()
         
+        
+        // setup the cell
+        cell.setUpCell()
+        
         // check the moment type
         let thisMoment = self.moments[indexPath.row]
         let momentType = thisMoment["momentType"] as! String
@@ -329,6 +333,14 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    // MARK: - Cell Interactions
+    
+    
+   
+    
+    
     
     
     
