@@ -58,6 +58,7 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func setUpVideoCell(width: CGFloat){
         self.playerVC.player = DataSource.sharedInstance.videoAssetForTesting
         self.playerVC.showsPlaybackControls = false
+        self.playerVC.player.volume = Float(0)
         self.playerVC.view.frame = CGRectMake(0, 0, width, width)
         
         self.contentView.addSubview(self.playerVC.view)
