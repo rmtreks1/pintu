@@ -377,10 +377,8 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 } else {
                     cell.playerVC.player.volume = Float(0)
                 }
-
             }
         }
-        
     }
     
     
