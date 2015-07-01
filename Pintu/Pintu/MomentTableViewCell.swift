@@ -64,11 +64,32 @@ class MomentTableViewCell: UITableViewCell, UIScrollViewDelegate {
         self.playerVC.view.userInteractionEnabled = false
         
         
+
+        // Invoke after player is created and AVPlayerItem is specified
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "playerItemDidReachEnd:",
+            name: AVPlayerItemDidPlayToEndTimeNotification,
+            object: self.playerVC.player.currentItem)
+        
+        
         self.contentView.addSubview(self.playerVC.view)
         
         self.mediaType = "video"
         
         playerVC.player.play()
+    }
+    
+    
+    
+    
+   
+    
+    
+    //function to restart the video
+    func playerItemDidReachEnd(notification: NSNotification) {
+        println("restarting video")
+        self.playerVC.player.seekToTime(kCMTimeZero)
+        self.playerVC.player.play()
     }
     
     
