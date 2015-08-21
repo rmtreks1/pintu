@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class TourScreensViewController: UIViewController, UIScrollViewDelegate {
     
@@ -67,6 +68,21 @@ class TourScreensViewController: UIViewController, UIScrollViewDelegate {
 //        
 //        // 5
 //        loadVisiblePages()
+        
+        
+        // Parse
+        
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
+        }
+        
+        
+        
+        
+        
+        
     }
     
     

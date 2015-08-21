@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import Photos
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,6 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // register for background app refresh
         UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        
+        
+        
+        // Parse
+        Parse.setApplicationId("OpxA73Nq8YvlN8aLlCJydfpV7NeAs5DEpob848Qp",
+            clientKey: "OXWw9IPKuVtKC1DkrrxdSryFaugQRzyll7SnGHho")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         
         return true
