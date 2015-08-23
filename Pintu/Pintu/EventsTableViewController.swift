@@ -10,7 +10,7 @@ import UIKit
 import ParseUI
 import Parse
 
-class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate, PFLogInViewControllerDelegate {
+class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     // MARK: - Variables
     // QBImagePicker => https://github.com/questbeat/QBImagePicker
@@ -50,6 +50,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
             println("******** no users ---- requesting login ********** ")
             var logInController = PFLogInViewController()
             logInController.delegate = self
+            logInController.signUpController?.delegate = self
             self.presentViewController(logInController, animated:true, completion: nil)
         }
         
@@ -478,6 +479,19 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        println("user not logged in")
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        println("user signed up")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 
