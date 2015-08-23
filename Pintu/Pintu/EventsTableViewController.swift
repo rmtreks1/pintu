@@ -447,5 +447,38 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
     
     
     
+    
+    
+    
+    // MARK: - Parse Delegate
+    
+//    #pragma mark - Logging in to Parse
+//    
+//    
+//    - (void)logInViewController:(PFLogInViewController *)controller
+//    didLogInUser:(PFUser *)user {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    
+//    - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    
+//    
+//    - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    
+//    - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+    
+    
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
 
 }
