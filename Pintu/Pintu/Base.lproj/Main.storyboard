@@ -194,7 +194,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1711" y="356"/>
+            <point key="canvasLocation" x="1277" y="356"/>
         </scene>
         <!--Grouped Table View Controller-->
         <scene sceneID="SNE-kx-sdy">
@@ -524,53 +524,6 @@
             </objects>
             <point key="canvasLocation" x="224" y="356.89333333333332"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="M8L-lW-EkC">
-            <objects>
-                <viewController id="5ZS-5C-aBC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lDs-dO-Try"/>
-                        <viewControllerLayoutGuide type="bottom" id="7vK-Fj-1VG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oJo-Vh-YZ7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-oR-d9D">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="g2l-GZ-xO7">
-                                <rect key="frame" x="46" y="474" width="228" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="cKE-Nk-Utc"/>
-                                </constraints>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Dc8-oR-d9D" secondAttribute="bottom" id="0Iu-hJ-QmE"/>
-                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="leading" secondItem="oJo-Vh-YZ7" secondAttribute="leading" id="3wo-zt-fkA"/>
-                            <constraint firstItem="g2l-GZ-xO7" firstAttribute="leading" secondItem="oJo-Vh-YZ7" secondAttribute="leadingMargin" constant="30" id="5jQ-dF-n4P"/>
-                            <constraint firstAttribute="trailing" secondItem="Dc8-oR-d9D" secondAttribute="trailing" id="HQc-cn-alP"/>
-                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="top" secondItem="lDs-dO-Try" secondAttribute="bottom" id="INM-mv-Dux"/>
-                            <constraint firstItem="Dc8-oR-d9D" firstAttribute="width" secondItem="oJo-Vh-YZ7" secondAttribute="width" id="Ion-kY-bkr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g2l-GZ-xO7" secondAttribute="trailing" constant="30" id="Zgh-Si-aep"/>
-                            <constraint firstItem="7vK-Fj-1VG" firstAttribute="top" secondItem="g2l-GZ-xO7" secondAttribute="bottom" constant="8" id="wKD-T6-9CX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Z8B-Hg-dOa">
-                        <barButtonItem key="rightBarButtonItem" title="Test" id="ecR-q0-IVe">
-                            <connections>
-                                <segue destination="dje-F9-r08" kind="push" id="SkV-od-28H"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="khO-aD-98m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1265" y="356"/>
-        </scene>
         <!--community-->
         <scene sceneID="jfW-a6-QGT">
             <objects>
@@ -640,7 +593,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="5ZS-5C-aBC" kind="relationship" relationship="rootViewController" id="R8V-fx-YoI"/>
+                        <segue destination="dje-F9-r08" kind="relationship" relationship="rootViewController" id="QGf-AN-kUq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j5-zC-gYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
