@@ -8,6 +8,7 @@
 
 import UIKit
 import ParseUI
+import Parse
 
 class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate, PFLogInViewControllerDelegate {
     
@@ -43,10 +44,18 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // Parse
         
-        var logInController = PFLogInViewController()
-        logInController.delegate = self
-        self.presentViewController(logInController, animated:true, completion: nil)
+        if ((PFUser.currentUser()) == nil) {
+            println("******** no users ---- requesting login ********** ")
+            var logInController = PFLogInViewController()
+            logInController.delegate = self
+            self.presentViewController(logInController, animated:true, completion: nil)
+        }
+        
+        
+        
+        
         
         
         
