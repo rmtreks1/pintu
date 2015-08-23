@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ParseUI
 
-class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate {
+class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate, PFLogInViewControllerDelegate {
     
     // MARK: - Variables
     // QBImagePicker => https://github.com/questbeat/QBImagePicker
@@ -41,6 +42,14 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        var logInController = PFLogInViewController()
+        logInController.delegate = self
+        self.presentViewController(logInController, animated:true, completion: nil)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
