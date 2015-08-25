@@ -295,7 +295,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                     if !highImageQuality {
                         println("good quality image retrieved")
                         fetchedImages.append(result)
+                        
+
+                        
+
                     }
+                    
                 }
                 
                 if fetchedImages.count == imageAssets.count {
@@ -312,6 +317,11 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                     
                     //        self.moments.append(newMoment)
                     self.moments.insert(newMoment, atIndex: 0)
+                    
+                    
+                    
+                    self.savePhotosToParse(fetchedImages)
+                    
                     
                     self.tableView.reloadData()
                 }
@@ -357,7 +367,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         
         
-        
+
         
         
         
@@ -493,6 +503,31 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    
+    
+    
+    // MARK: - Parse Functions
+    
+    
+    // test function - saves multiple image to Parse with no relationship to the moment
+    func savePhotosToParse (fetchedImages: [UIImage]) {
+        println("save photos to parse")
+        
+        
+        for image in fetchedImages {
+            let imageData = UIImagePNGRepresentation(image)
+            let imageFile = PFFile(name:"image.png", data:imageData)
+            
+            var media = PFObject(className:"Media")
+            media["imageName"] = "MomentPhoto"
+            media["imageFile"] = imageFile
+            media.saveInBackground()
+        }
+        
+       
+        
+    }
     
 
 }
