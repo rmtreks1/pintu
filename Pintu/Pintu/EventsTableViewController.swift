@@ -515,6 +515,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         println("save photos to parse")
         
         
+       
+        // save the images and then associate them to a moment
+        // pass to the createMomentInParse function an array with the media object IDs
+        
+        var mediaIDs = [String]()
+        
         for image in fetchedImages {
             let imageData = UIImagePNGRepresentation(image)
             let imageFile = PFFile(name:"image.png", data:imageData)
@@ -523,10 +529,35 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
             media["imageName"] = "MomentPhoto"
             media["imageFile"] = imageFile
             media.saveInBackground()
+            media.saveInBackgroundWithBlock({ (success, error) -> Void in
+                if success {
+                    var mediaID = media.objectId
+                    mediaIDs.append(mediaID!)
+                }
+                
+                if fetchedImages.count == mediaIDs.count {
+                    self.createMomentInParse(mediaIDs)
+                }
+            })
         }
+    }
+    
+    
+    
+    
+    
+    func createMomentInParse(mediaIDs:[String]){
+        println("creating a moment in parse")
         
-       
-        
+        var moment = PFObject(className: "Moment")
+        moment["description"] = "something random"
+        moment["mediaIDs"] = mediaIDs
+        moment.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                var momentID = moment.objectId
+                println("successfully saved moment \(momentID)")
+            }
+        }
     }
     
 
