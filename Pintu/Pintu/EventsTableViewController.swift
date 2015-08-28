@@ -315,7 +315,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                             
                             //unique id for the place - need to be carefully taken care of
 //                            let place = city + ", " + state
-                            let place = "\(city), \(state), \(country)."
+                            let place = "\(city), \(country)."
                             println(place)
                             println("**********")
 //                            println(data)
