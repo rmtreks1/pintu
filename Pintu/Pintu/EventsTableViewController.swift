@@ -9,6 +9,8 @@
 import UIKit
 import ParseUI
 import Parse
+import CoreLocation
+import AddressBook
 
 class EventsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, QBImagePickerControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
@@ -294,8 +296,35 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                 if let highImageQuality = info[PHImageResultIsDegradedKey] as? Bool {
                     if !highImageQuality {
                         println("good quality image retrieved")
+                        println("image location - \(asset.location)")
+                        
                         fetchedImages.append(result)
                         
+                        
+                        //used to convert coordinates to the physical address
+                        let geocoder = CLGeocoder()
+                        //request Apple server to geodecode the coordinates
+                        //works async, be careful!
+                        geocoder.reverseGeocodeLocation(asset.location) { (data, error) -> Void in
+                            
+                            //get address and extract city and state
+                            let address = data[0].addressDictionary!
+                            let city = address[kABPersonAddressCityKey] as! String
+                            let state = address[kABPersonAddressStateKey] as! String
+                            
+                            //unique id for the place - need to be carefully taken care of
+                            let place = city + ", " + state
+                            println(place)
+                            println("**********")
+//                            println(data)
+                            
+                            
+                            let placeOfInterest: CLPlacemark = data[0] as! CLPlacemark
+                            println(placeOfInterest.name)
+                            
+                            
+                            
+                        }
 
                         
 
@@ -559,6 +588,12 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
             }
         }
     }
+    
+    
+    
+    // MARK: - Location
+    
+    
     
 
 }
