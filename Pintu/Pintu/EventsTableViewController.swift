@@ -311,9 +311,11 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                             let address = data[0].addressDictionary!
                             let city = address[kABPersonAddressCityKey] as! String
                             let state = address[kABPersonAddressStateKey] as! String
+                            let country = address[kABPersonAddressCountryKey] as! String
                             
                             //unique id for the place - need to be carefully taken care of
-                            let place = city + ", " + state
+//                            let place = city + ", " + state
+                            let place = "\(city), \(state), \(country)."
                             println(place)
                             println("**********")
 //                            println(data)
