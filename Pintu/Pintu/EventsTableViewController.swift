@@ -283,6 +283,7 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
         
         // get the image for every asset
         var fetchedImages = [UIImage]()
+        var fetchedImagesWithLocation = [(UIImage, String, String)]()
 
         
         let manager = PHImageManager.defaultManager()
@@ -322,9 +323,17 @@ class EventsTableViewController: UITableViewController, UIImagePickerControllerD
                             
                             
                             let placeOfInterest: CLPlacemark = data[0] as! CLPlacemark
+                            let placeOfInterestName = placeOfInterest.name as String
                             println(placeOfInterest.name)
                             
+                            var imageWithLocation = (result, placeOfInterest.name, place)
                             
+                            fetchedImagesWithLocation.append((result, placeOfInterest.name, place))
+                            
+                            
+                            if fetchedImagesWithLocation.count == imageAssets.count {
+                                println("retrieved all images with locations")
+                            }
                             
                         }
 
